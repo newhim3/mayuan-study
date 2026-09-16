@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="16" fill="#a61b29"/>
+  <path d="M18 17h28v7H18zm3 11h22v6H21zm-3 10h28v7H18z" fill="#fff" opacity=".22"/>
+  <text x="32" y="44" text-anchor="middle" fill="#fff" font-size="34" font-family="serif" font-weight="700">马</text>
+</svg>

@@ -1,0 +1,4606 @@
+{
+  "rawCandidates": 6764,
+  "uniqueQuestions": 2748,
+  "duplicatesRemoved": 4016,
+  "duplicateGroups": 1793,
+  "withAnswer": 2236,
+  "withoutAnswer": 512,
+  "answerConflicts": 167,
+  "conflicts": [
+    {
+      "id": "my-5a47e7299326",
+      "stem": "对于同一棵大树,在木匠眼中是木材,画家看到的是色彩和色调,植物学家看到的是它 的形态特征,这是由于( )",
+      "selected": "ABE",
+      "otherAnswers": [
+        "AD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "AD"
+        }
+      ]
+    },
+    {
+      "id": "my-612e8cc4e7ec",
+      "stem": "社会主义取代资本主义将是一个长期的历史过程,这是由于( )",
+      "selected": "ABCDE",
+      "otherAnswers": [
+        "ABC",
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABC"
+        }
+      ]
+    },
+    {
+      "id": "my-b59aed5b9f88",
+      "stem": "资本主义经济政治发展不平衡导致社会主义革命( )",
+      "selected": "DE",
+      "otherAnswers": [
+        "CD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "DE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "DE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "DE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "DE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "DE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "DE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "CD"
+        }
+      ]
+    },
+    {
+      "id": "my-4e08e3b68c76",
+      "stem": "真理和谬误在一定条件下能相互转化,这说明( )",
+      "selected": "BC",
+      "otherAnswers": [
+        "CD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "BC"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "BC"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "BC"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "CD"
+        }
+      ]
+    },
+    {
+      "id": "my-12dde0ef0d58",
+      "stem": "垄断高价和垄断低价并不否定价值规律,因为( )",
+      "selected": "ACDE",
+      "otherAnswers": [
+        "ABCD",
+        "ACD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ACDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ACDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ACDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ACDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ACDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ACDE"
+        },
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "ABCD"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ACD"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABCD"
+        }
+      ]
+    },
+    {
+      "id": "my-447105c6acc7",
+      "stem": "从资本输出的主体来划分,资本输出的形式有( )",
+      "selected": "DE",
+      "otherAnswers": [
+        "ABC"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "DE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "DE"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "DE"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "ABC"
+        }
+      ]
+    },
+    {
+      "id": "my-9de252795f3f",
+      "stem": "私人垄断资本主义向国家垄断资本主义过渡( )",
+      "selected": "ABD",
+      "otherAnswers": [
+        "ABC"
+      ],
+      "sources": [
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "ABD"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "ABD"
+        },
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "ABC"
+        }
+      ]
+    },
+    {
+      "id": "my-28bacf88203b",
+      "stem": "第二次世界大战后跨国公司的迅速发展( )",
+      "selected": "ABCDE",
+      "otherAnswers": [
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABCD"
+        }
+      ]
+    },
+    {
+      "id": "my-7fd3cc989626",
+      "stem": "从资本形态上划分,资本输出的形式有( )",
+      "selected": "ABC",
+      "otherAnswers": [
+        "DE"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "DE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "DE"
+        }
+      ]
+    },
+    {
+      "id": "my-8e77998df4bf",
+      "stem": "下列各项属于哲学基本问题内容的有( )",
+      "selected": "ACDE",
+      "otherAnswers": [
+        "AD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ACDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ACDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ACDE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "AD"
+        }
+      ]
+    },
+    {
+      "id": "my-707e451bb91f",
+      "stem": "资产阶级推动改良主义的措施主要有( )",
+      "selected": "BCDE",
+      "otherAnswers": [
+        "BCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "BCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "BCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "BCDE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "BCD"
+        }
+      ]
+    },
+    {
+      "id": "my-d4b32b1f944c",
+      "stem": "国家垄断资本主义的局限性体现在( )",
+      "selected": "ABCDE",
+      "otherAnswers": [
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABCD"
+        }
+      ]
+    },
+    {
+      "id": "my-72c9a515a47d",
+      "stem": "经济全球化发展趋势的主要表现是( )",
+      "selected": "ABCDE",
+      "otherAnswers": [
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABCD"
+        }
+      ]
+    },
+    {
+      "id": "my-509196450e57",
+      "stem": "下列各项体现人与社会关系的有( )",
+      "selected": "ACE",
+      "otherAnswers": [
+        "AC"
+      ],
+      "sources": [
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "ACE"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "ACE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "AC"
+        }
+      ]
+    },
+    {
+      "id": "my-cbfc94544fc9",
+      "stem": "垄断组织比较发达的一般形式有( )",
+      "selected": "BCDE",
+      "otherAnswers": [
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "BCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "BCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "BCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "BCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "BCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "BCDE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABCD"
+        }
+      ]
+    },
+    {
+      "id": "my-05e04c650d11",
+      "stem": "战前国际垄断同盟的主要形式是( )",
+      "selected": "BCDE",
+      "otherAnswers": [
+        "BCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "BCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "BCDE"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "BCD"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "BCDE"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "BCD"
+        }
+      ]
+    },
+    {
+      "id": "my-394f2a80d8de",
+      "stem": "社会意识的相对独立性表现在( )",
+      "selected": "ABCDE",
+      "otherAnswers": [
+        "ABD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABD"
+        }
+      ]
+    },
+    {
+      "id": "my-98bb93a554e2",
+      "stem": "生产商品的劳动的二重性是( )",
+      "selected": "AB",
+      "otherAnswers": [
+        "AC"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "AB"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "AB"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "AB"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "AC"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "AC"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "AC"
+        }
+      ]
+    },
+    {
+      "id": "my-86e64084c2e1",
+      "stem": "垄断时期竞争的特点主要是( )",
+      "selected": "ABCDE",
+      "otherAnswers": [
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABCD"
+        }
+      ]
+    },
+    {
+      "id": "my-1f715f1a295a",
+      "stem": "对于输入国来说,资本输出( )",
+      "selected": "ABDE",
+      "otherAnswers": [
+        "AB",
+        "ABD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABDE"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "AB"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABDE"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "AB"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABD"
+        }
+      ]
+    },
+    {
+      "id": "my-7422b85ec45d",
+      "stem": "对于输出国来说,资本输出( )",
+      "selected": "ABCDE",
+      "otherAnswers": [
+        "AD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "AD"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "AD"
+        }
+      ]
+    },
+    {
+      "id": "my-6a40d427c1b8",
+      "stem": "内容和形式的相互作用是( )",
+      "selected": "ACDE",
+      "otherAnswers": [
+        "ABD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ACDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ACDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ACDE"
+        },
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "ABD"
+        }
+      ]
+    },
+    {
+      "id": "my-4542bd26dc5b",
+      "stem": "货币的两个基本职能是( )",
+      "selected": "AB",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "AB"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "AB"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "AB"
+        },
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-91b9f1b8d515",
+      "stem": "资本输出的后果表现在( )",
+      "selected": "BCDE",
+      "otherAnswers": [
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "BCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "BCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "BCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "BCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "BCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "BCDE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABCD"
+        }
+      ]
+    },
+    {
+      "id": "my-73ca4ec996d0",
+      "stem": "物质和运动的关系是( )",
+      "selected": "ABC",
+      "otherAnswers": [
+        "CD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "CD"
+        }
+      ]
+    },
+    {
+      "id": "my-ebaad0402cad",
+      "stem": "国家垄断资本主义是( )",
+      "selected": "A",
+      "otherAnswers": [
+        "ABCD",
+        "ABD",
+        "ABDE"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABDE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABCD"
+        },
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABD"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-ced84dfe2fe6",
+      "stem": "商品的二因素是指( )",
+      "selected": "AC",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "AC"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "AC"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "AC"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-397c7e18b227",
+      "stem": "意识的本质是( )",
+      "selected": "BC",
+      "otherAnswers": [
+        "AD",
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "BC"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "BC"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "BC"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "AD"
+        }
+      ]
+    },
+    {
+      "id": "my-9202df1b888b",
+      "stem": "垄断利润来自( )",
+      "selected": "ABCDE",
+      "otherAnswers": [
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABCD"
+        }
+      ]
+    },
+    {
+      "id": "my-67670fc40256",
+      "stem": "共产主义是( )",
+      "selected": "ABC",
+      "otherAnswers": [
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "ABCD"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "ABCD"
+        },
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "ABC"
+        }
+      ]
+    },
+    {
+      "id": "my-3f5487faeecc",
+      "stem": "垄断价格是( )",
+      "selected": "ABCDE",
+      "otherAnswers": [
+        "ABC",
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABCD"
+        }
+      ]
+    },
+    {
+      "id": "my-3dfbcd05abba",
+      "stem": "经济全球化( )",
+      "selected": "BCE",
+      "otherAnswers": [
+        "A"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "BCE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "BCE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "BCE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "BCE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "BCE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "BCE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-78ffeee17f67",
+      "stem": "资本输出是( )",
+      "selected": "ABCDE",
+      "otherAnswers": [
+        "BCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "BCD"
+        }
+      ]
+    },
+    {
+      "id": "my-f2925fdc1c06",
+      "stem": "邓小平理论是当代中国的马克思主义,是马克思主义在中国发展的新阶段,它在哲学上的发展主要表现( )",
+      "selected": "ABCDE",
+      "otherAnswers": [
+        "E"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原1.txt",
+          "answer": "E"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "ABCDE"
+        }
+      ]
+    },
+    {
+      "id": "my-bad9eb4e4f8f",
+      "stem": "下列选项中,体现量变引起质变的哲学道理的有【A 】【B 】【 C】【 】【 】",
+      "selected": "ABC",
+      "otherAnswers": [
+        "A"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "ABC"
+        }
+      ]
+    },
+    {
+      "id": "my-e69f358cda84",
+      "stem": "下列选项中,属于唯物辩证法基本规律的有【A 】【B】【 D】【 】【 】",
+      "selected": "A",
+      "otherAnswers": [
+        "ABD"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABD"
+        }
+      ]
+    },
+    {
+      "id": "my-1717a6ecc189",
+      "stem": "辩证唯物主义物质观的重要理论意义在于它有利于【A】【B】【D】【】【】",
+      "selected": "A",
+      "otherAnswers": [
+        "ABD"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABD"
+        }
+      ]
+    },
+    {
+      "id": "my-6cf42fee1fba",
+      "stem": "人类与自然界的关系和动物与自然界的关系具有不同的性质,其表现有( )",
+      "selected": "ABCE",
+      "otherAnswers": [
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "ABCE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABCD"
+        }
+      ]
+    },
+    {
+      "id": "my-b0e84f9d6705",
+      "stem": "下列各对矛盾属于社会基本矛盾的有【C 】【 D】【 】【 】【 】",
+      "selected": "C",
+      "otherAnswers": [
+        "BD"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "BD"
+        }
+      ]
+    },
+    {
+      "id": "my-2b62ec0d401f",
+      "stem": "下列各项属于马克思主义哲学对待唯心主义的正确态度的有( )",
+      "selected": "CDE",
+      "otherAnswers": [
+        "CD"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "CDE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "CD"
+        }
+      ]
+    },
+    {
+      "id": "my-1d518bc949b7",
+      "stem": "按照辩证唯物主义的物质定义,下列哪些现象属于物质现象( )",
+      "selected": "ABE",
+      "otherAnswers": [
+        "ABC"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "ABE"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "ABC"
+        }
+      ]
+    },
+    {
+      "id": "my-1cefa050c764",
+      "stem": "生产方式是社会发展的决定力量,这是因为( )",
+      "selected": "ACDE",
+      "otherAnswers": [
+        "ACD"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "ACDE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ACD"
+        }
+      ]
+    },
+    {
+      "id": "my-e249d7750a42",
+      "stem": "下列说法中,正确体现意识能动性的有( )",
+      "selected": "ACE",
+      "otherAnswers": [
+        "AC"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "ACE"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "ACE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "AC"
+        }
+      ]
+    },
+    {
+      "id": "my-1c0cdd46efcd",
+      "stem": "下列各项属于生产关系内容的有 ( )",
+      "selected": "BCD",
+      "otherAnswers": [
+        "BD"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "BCD"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "BCD"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "BD"
+        }
+      ]
+    },
+    {
+      "id": "my-b24295512072",
+      "stem": "马克思主义哲学的显著特点是( )",
+      "selected": "AD",
+      "otherAnswers": [
+        "ACD"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "AD"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "ACD"
+        }
+      ]
+    },
+    {
+      "id": "my-de7b9b3268b9",
+      "stem": "在实践和认识的关系中 ( )",
+      "selected": "ABCDE",
+      "otherAnswers": [
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABCD"
+        }
+      ]
+    },
+    {
+      "id": "my-be8b0be4c799",
+      "stem": "感觉和概念的区别在于( )",
+      "selected": "ABCE",
+      "otherAnswers": [
+        "ABC"
+      ],
+      "sources": [
+        {
+          "source": "马原1.txt",
+          "answer": "ABCE"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "ABCE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABC"
+        }
+      ]
+    },
+    {
+      "id": "my-49910cf5956f",
+      "stem": "马克思主义哲学是( )",
+      "selected": "ABCDE",
+      "otherAnswers": [
+        "B",
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-898ff28b7086",
+      "stem": "16世纪末,伽利略通过在比萨斜塔所做的自由落体实验,推翻了亚里士多德关于物体的降落速度与物体的重量成正比的说法。这件事说明( )",
+      "selected": "C",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "C"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-7ae5444f0276",
+      "stem": "把一些法律上和生产上还是独立的大垄断企业在流通环节上统一起来进行垄断经营的垄断组织形式是( )",
+      "selected": "A",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-415f461dfe39",
+      "stem": "法国科学家路易·巴斯德说:“在观察事物之 际,机遇偏爱有准备的头脑”。这句话强调了( )",
+      "selected": "D",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-3a243ce1e46a",
+      "stem": "任何科学理论都不能穷尽真理,而只能在实践中不断地开辟认识真理的道路。这说明 ( )",
+      "selected": "C",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-62412cbda14b",
+      "stem": "在实际工作中,要注意掌握分寸,防止“过”或“不及”,这在哲学上属于: ( )",
+      "selected": "D",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思题库(1).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-0c4153cd52a6",
+      "stem": "现代科技日新月异,并取得了许多重大成果,这一切对马克思主义哲学的影响是( )",
+      "selected": "C",
+      "otherAnswers": [
+        "A"
+      ],
+      "sources": [
+        {
+          "source": "马原2.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-6c0e51c98b5d",
+      "stem": "宋代诗人陆游在一首诗中说;“纸上得来终觉浅,绝知此事要躬行”。这是强调( )",
+      "selected": "C",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马原2.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-018caa1a418c",
+      "stem": "认识是主体对客体能动的反映,是摹写与创造的统一,把二者割裂开来会导致( )",
+      "selected": "CD",
+      "otherAnswers": [
+        "AB"
+      ],
+      "sources": [
+        {
+          "source": "马原2.txt",
+          "answer": "CD"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "CD"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "AB"
+        }
+      ]
+    },
+    {
+      "id": "my-14271583da36",
+      "stem": "在实际工作中,要注意掌握分寸,防止“过”或“不及”,其关键在于( )",
+      "selected": "D",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原3.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-1fac10b44d5b",
+      "stem": "“地理环境是人类社会赖以存在和发展的必要前提之一”,这是( )",
+      "selected": "C",
+      "otherAnswers": [
+        "CD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "CD"
+        }
+      ]
+    },
+    {
+      "id": "my-c8efbb3eb867",
+      "stem": "庄子说:“是亦彼也,彼亦是也”。这个命题的哲学思想是( )",
+      "selected": "A",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-32565888c940",
+      "stem": "垄断资本主义国家对经济的宏观管理与调节是代表着( )",
+      "selected": "A",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-f87a21e50ee4",
+      "stem": "在社会主义现代化建设中正确发挥意识的能动作用( )",
+      "selected": "ABC",
+      "otherAnswers": [
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABCD"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "ABC"
+        }
+      ]
+    },
+    {
+      "id": "my-b67d16b12fc0",
+      "stem": "自由竞争资本主义向垄断资本主义过渡的根源在于( )",
+      "selected": "C",
+      "otherAnswers": [
+        "A"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-4e0b13c7ca91",
+      "stem": "实事求是包含着丰富而深刻的哲学思想,它体现了( )",
+      "selected": "ABD",
+      "otherAnswers": [
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABCD"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "ABD"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "ABD"
+        }
+      ]
+    },
+    {
+      "id": "my-7f3688da0a29",
+      "stem": "判断一种生产关系是否先进的根本标志在于它是 ( )",
+      "selected": "A",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-c5f919150ae0",
+      "stem": "在资本主义生产中,工人新创造的全部价值,是( )。",
+      "selected": "A",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-47f5ac0523e5",
+      "stem": "资本主义为社会主义所代替的历史必然性表现在( )",
+      "selected": "ABCD",
+      "otherAnswers": [
+        "ABC"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "ABCD"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABC"
+        }
+      ]
+    },
+    {
+      "id": "my-e2b1f92b2d92",
+      "stem": "资本主义工资之所以掩盖了剥削,是由于它( )。",
+      "selected": "A",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-7abbb1f3ecb7",
+      "stem": "“割下来的手就不再是人手”这句话体现了( )",
+      "selected": "B",
+      "otherAnswers": [
+        "A"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "B"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-27b35e2ee817",
+      "stem": "下列活动中,属于最基本的实践活动的是 ( )",
+      "selected": "C",
+      "otherAnswers": [
+        "A"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-73353374aad7",
+      "stem": "上层建筑对社会发展的作用性质取决于它( )",
+      "selected": "D",
+      "otherAnswers": [
+        "ABC"
+      ],
+      "sources": [
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "D"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "ABC"
+        }
+      ]
+    },
+    {
+      "id": "my-60488f680991",
+      "stem": "在客观规律面前,人的主观能动性表现在( )",
+      "selected": "D",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原3.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-98e316e394a9",
+      "stem": "下列各项属于对人的本质的正确界定的有( )",
+      "selected": "AB",
+      "otherAnswers": [
+        "ACD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "AB"
+        },
+        {
+          "source": "马原3.txt",
+          "answer": "ACD"
+        }
+      ]
+    },
+    {
+      "id": "my-c68d5c6ea42d",
+      "stem": "马克思主义最根本的世界观和方法论是( )",
+      "selected": "A",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "A"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思题库(1).txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-c0ebda4e0ff0",
+      "stem": "总的量变过程中的阶段性部分质变是指( )",
+      "selected": "A",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "A"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-d10c33e4475f",
+      "stem": "理解整个人类社会发展史的“钥匙”是( )",
+      "selected": "C",
+      "otherAnswers": [
+        "A"
+      ],
+      "sources": [
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "A"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-2853ba85a0c0",
+      "stem": "垄断价格的形成和垄断利润的产生表明( )",
+      "selected": "C",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-26aedd728c01",
+      "stem": "划分唯物主义和唯心主义的唯一标准是( )",
+      "selected": "C",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-f5040d9b87f3",
+      "stem": "正确发挥意识能动作用的客观前提是( )",
+      "selected": "D",
+      "otherAnswers": [
+        "B",
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-6a8ba9c55e41",
+      "stem": "马克思主义哲学与具体科学的关系是( )",
+      "selected": "ABC",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-10a6b79b6da5",
+      "stem": "唯物辩证法和形而上学的对立表现在( )",
+      "selected": "ABD",
+      "otherAnswers": [
+        "ACD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABD"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ACD"
+        }
+      ]
+    },
+    {
+      "id": "my-60205475ae7d",
+      "stem": "先进生产力的集中体现和主要标志是( )",
+      "selected": "A",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-b00d516e6f72",
+      "stem": "区分不变资本和可变资本的意义在于( )",
+      "selected": "B",
+      "otherAnswers": [
+        "BD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "BD"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-3f6be858fb98",
+      "stem": "区分量变和质变的根本标志是看: ( )",
+      "selected": "D",
+      "otherAnswers": [
+        "A",
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思题库(1).txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-2bd5060d9590",
+      "stem": "“动中有静、静中有动”,说的是( )",
+      "selected": "A",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "A"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-54138df4eb92",
+      "stem": "马克思主义哲学的直接理论来源是( )",
+      "selected": "C",
+      "otherAnswers": [
+        "A",
+        "AD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "AD"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-2f144410cf2d",
+      "stem": "形而上学唯物主义物质观的错误是( )",
+      "selected": "C",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原1.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-d575a856bc24",
+      "stem": "不变资本是资本主义生产过程中( )。",
+      "selected": "BCD",
+      "otherAnswers": [
+        "AC"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "BCD"
+        },
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "AC"
+        }
+      ]
+    },
+    {
+      "id": "my-cade5da24616",
+      "stem": "科学社会主义的直接理论来源是( )。",
+      "selected": "B",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "B"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-805bc3d0578e",
+      "stem": "马克思主义最鲜明的政治立场是( )",
+      "selected": "A",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "A"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思题库(1).txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-9b2545de75f5",
+      "stem": "马克思主义最重要的理论品质是( )",
+      "selected": "D",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思题库(1).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原3.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-1cc95a001eab",
+      "stem": "对立统一规律揭示了事物发展的( )",
+      "selected": "D",
+      "otherAnswers": [
+        "A"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-e59f4af735f0",
+      "stem": "下列命题中包含辩证法思想的有( )",
+      "selected": "ABD",
+      "otherAnswers": [
+        "ABC"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "ABD"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABC"
+        }
+      ]
+    },
+    {
+      "id": "my-278cf95818a6",
+      "stem": "马克思主义最崇高的社会理想是( )",
+      "selected": "A",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思题库(1).txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-ed9d31568879",
+      "stem": "“机不可失,时不再来”指的是( )",
+      "selected": "B",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "B"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-d39db4e3bffd",
+      "stem": "感性认识和理性认识的区别在于( )",
+      "selected": "A",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-56a2ae462ac2",
+      "stem": "一种认识是不是真理,要看它 ( )",
+      "selected": "D",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-bb2f7d985ab3",
+      "stem": "国家垄断资本主义的根本特征是( )",
+      "selected": "D",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-439dc9589c3d",
+      "stem": "“过犹不及”体现的哲学道理是( )",
+      "selected": "ABC",
+      "otherAnswers": [
+        "AB"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "AB"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "ABC"
+        }
+      ]
+    },
+    {
+      "id": "my-1eb8f9f3960e",
+      "stem": "辩证唯物主义认为,认识的本质是()",
+      "selected": "A",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-4b5e91475df1",
+      "stem": "在生产力和生产关系这对矛盾中( )",
+      "selected": "A",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-b770d4b2083b",
+      "stem": "英雄史观的理论出发点是主张 ( )",
+      "selected": "B",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马原2.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-9f71348c01f8",
+      "stem": "马克思主义产生的经济根源是( )",
+      "selected": "D",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-c79622cd5f89",
+      "stem": "马克思主义生命力的根源在于( )",
+      "selected": "A",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思题库(1).txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-a62b5de7b0d3",
+      "stem": "直接经验和间接经验的关系是( )",
+      "selected": "C",
+      "otherAnswers": [
+        "A"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-f2cc1643c843",
+      "stem": "货币转化为资本的前提条件是( )",
+      "selected": "A",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-8fd0145f634a",
+      "stem": "马克思一生的“两大发现”是( )",
+      "selected": "AB",
+      "otherAnswers": [
+        "CD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "AB"
+        },
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "CD"
+        }
+      ]
+    },
+    {
+      "id": "my-a8e0be877b2c",
+      "stem": "影响资本周转速度的因素有( )。",
+      "selected": "BD",
+      "otherAnswers": [
+        "AB"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "AB"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "BD"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "BD"
+        }
+      ]
+    },
+    {
+      "id": "my-1c851518bf23",
+      "stem": "科学社会主义的核心内容是( )。",
+      "selected": "A",
+      "otherAnswers": [
+        "AB"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "AB"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-d0b8639caa45",
+      "stem": "社会主义发展史的两次飞跃是( )",
+      "selected": "AD",
+      "otherAnswers": [
+        "AC"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "AD"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "AC"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "AC"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "AD"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "AC"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "AD"
+        }
+      ]
+    },
+    {
+      "id": "my-f57943e54441",
+      "stem": "两条根本对立的认识路线是( )",
+      "selected": "D",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "D"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-b3bd6db9999b",
+      "stem": "科学社会主义诞生的标志是( )",
+      "selected": "D",
+      "otherAnswers": [
+        "A"
+      ],
+      "sources": [
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "D"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-868433a48792",
+      "stem": "无产阶级专政的最终目标是( )",
+      "selected": "D",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "D"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-3c408cac6e8b",
+      "stem": "社会革命的最深刻根源在于( )",
+      "selected": "C",
+      "otherAnswers": [
+        "A"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-c7a690d2c742",
+      "stem": "唯物辩证法的实质和核心是( )",
+      "selected": "A",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-ccf6ae909b64",
+      "stem": "资本主义经济危机的实质是( )",
+      "selected": "C",
+      "otherAnswers": [
+        "A"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-f04a67e05558",
+      "stem": "唯心主义的两种基本形式是( )",
+      "selected": "B",
+      "otherAnswers": [
+        "A"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-e6f28bbd073b",
+      "stem": "驳斥不可知论最有力的论据是()",
+      "selected": "D",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-d2896e3e9e13",
+      "stem": "人类社会发展的基本动力是( )",
+      "selected": "C",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-2acece6f706c",
+      "stem": "货币转化为资本的前提是 ( )",
+      "selected": "D",
+      "otherAnswers": [
+        "A",
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "D"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-d15987a4f406",
+      "stem": "国家垄断资本主义的发展 ( )",
+      "selected": "D",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "D"
+        },
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "D"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-6d7fe74f1f4a",
+      "stem": "资本主义的历史地位是 ( )。",
+      "selected": "D",
+      "otherAnswers": [
+        "A"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-c27799968100",
+      "stem": "矛盾的两种基本属性是: ( )",
+      "selected": "A",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思题库(1).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-d7f6cfcd59d4",
+      "stem": "哲学上的一元论就是承认( )",
+      "selected": "D",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-4321ee5b98bc",
+      "stem": "掌握事物度的重要性在于( )",
+      "selected": "BC",
+      "otherAnswers": [
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABCD"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "BC"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "BC"
+        }
+      ]
+    },
+    {
+      "id": "my-0eb813a4635b",
+      "stem": "物质资料的生产方式包括( )",
+      "selected": "C",
+      "otherAnswers": [
+        "A"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-d2414128a424",
+      "stem": "相对剩余价值的获得是( )。",
+      "selected": "B",
+      "otherAnswers": [
+        "BC"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "BC"
+        }
+      ]
+    },
+    {
+      "id": "my-fcb45f6707f1",
+      "stem": "一切唯心主义都主张: ( )",
+      "selected": "A",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思题库(1).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-db43a126b12a",
+      "stem": "“拔苗助长”的事例是 ( )",
+      "selected": "C",
+      "otherAnswers": [
+        "BC"
+      ],
+      "sources": [
+        {
+          "source": "马原2.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "BC"
+        }
+      ]
+    },
+    {
+      "id": "my-01bdd984484e",
+      "stem": "真理和谬误的区别在于( )",
+      "selected": "A",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "A"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-49c11f731351",
+      "stem": "资本主义工资的本质是( )",
+      "selected": "A",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "C"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-50de502f0e4a",
+      "stem": "唯物辩证法的总特征是( )",
+      "selected": "C",
+      "otherAnswers": [
+        "B",
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原3.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-d6f199bb83b0",
+      "stem": "垄断价格形成的基础是( )",
+      "selected": "A",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-0d8e418406d8",
+      "stem": "人类社会的基本矛盾是( )",
+      "selected": "C",
+      "otherAnswers": [
+        "A",
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-ff3a46990766",
+      "stem": "社会主义社会的改革是( )",
+      "selected": "D",
+      "otherAnswers": [
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABCD"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-8c9545163088",
+      "stem": "事物发展的动力是: ( )",
+      "selected": "B",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思题库(1).txt",
+          "answer": "C"
+        },
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "B"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-ea1f1a78ea6f",
+      "stem": "实践是认识的来源表明( )",
+      "selected": "D",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马原2.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-e440984f2aea",
+      "stem": "概念、判断、推理是( )",
+      "selected": "B",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原3.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-e806be1c0347",
+      "stem": "平均利润率的形成是( )",
+      "selected": "A",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-ab701b782891",
+      "stem": "运动和静止的关系是( )",
+      "selected": "C",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-67056c1f1a66",
+      "stem": "质量互变规律揭示了( )",
+      "selected": "B",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "B"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-a5e0b3e57a62",
+      "stem": "辩证法所要回答的是( )",
+      "selected": "C",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-d936dde049e8",
+      "stem": "哲学基本问题是: ( )",
+      "selected": "B",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思题库(1).txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-49912428f541",
+      "stem": "商品的内在矛盾有( )",
+      "selected": "ABD",
+      "otherAnswers": [
+        "ACD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "ABD"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ACD"
+        }
+      ]
+    },
+    {
+      "id": "my-5790c0077452",
+      "stem": "人的全面发展是指( )",
+      "selected": "ABC",
+      "otherAnswers": [
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "ABCD"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABC"
+        }
+      ]
+    },
+    {
+      "id": "my-99049219eba6",
+      "stem": "哲学的基本问题是( )",
+      "selected": "B",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "B"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-53e4e9792fcd",
+      "stem": "矛盾的基本属性是( )",
+      "selected": "D",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-8774c19dfa7a",
+      "stem": "矛盾问题的精髓是( )",
+      "selected": "A",
+      "otherAnswers": [
+        "AC",
+        "C",
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "AC"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-664cb548f43e",
+      "stem": "真理的客观性是指( )",
+      "selected": "D",
+      "otherAnswers": [
+        "BD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "BD"
+        }
+      ]
+    },
+    {
+      "id": "my-f860a5eb3a5a",
+      "stem": "资本积累的源泉是( )",
+      "selected": "A",
+      "otherAnswers": [
+        "B",
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原3.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-25235fe67aab",
+      "stem": "哲学的物质范畴是( )",
+      "selected": "ABCD",
+      "otherAnswers": [
+        "CD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "CD"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "ABCD"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "ABCD"
+        }
+      ]
+    },
+    {
+      "id": "my-9851537ae75b",
+      "stem": "商品的使用价值是( )",
+      "selected": "ABCD",
+      "otherAnswers": [
+        "ABC"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "ABCD"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "ABCD"
+        }
+      ]
+    },
+    {
+      "id": "my-2baa961df4ae",
+      "stem": "社会基本矛盾是( )",
+      "selected": "D",
+      "otherAnswers": [
+        "A"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-3314198c1d52",
+      "stem": "马克思主义是 ( )",
+      "selected": "ABCD",
+      "otherAnswers": [
+        "A",
+        "ABC"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "ABCD"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "ABCD"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-ef18f8becfe1",
+      "stem": "质和量的关系是( )",
+      "selected": "ABC",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "ABC"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-860ac32bda04",
+      "stem": "货币的本质是( )",
+      "selected": "C",
+      "otherAnswers": [
+        "B",
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "B"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-040561faa2e6",
+      "stem": "剩余价值率是( )",
+      "selected": "D",
+      "otherAnswers": [
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "D"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "ABCD"
+        }
+      ]
+    },
+    {
+      "id": "my-05db1fd11b13",
+      "stem": "人的本质在于( )",
+      "selected": "D",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-99f77b26eb15",
+      "stem": "相对静止是指( )",
+      "selected": "C",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-d92532f9d9ab",
+      "stem": "事物的质是指( )",
+      "selected": "D",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "my-bad4dd588281",
+      "stem": "商品的价值是( )",
+      "selected": "AC",
+      "otherAnswers": [
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABCD"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "AC"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "AC"
+        }
+      ]
+    },
+    {
+      "id": "my-24e3d850eb93",
+      "stem": "垄断利润是( )。",
+      "selected": "D",
+      "otherAnswers": [
+        "BCD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "BCD"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原2.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "D"
+        },
+        {
+          "source": "马原考试题4.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-06b73ca32e5f",
+      "stem": "社会意识是( )",
+      "selected": "A",
+      "otherAnswers": [
+        "C"
+      ],
+      "sources": [
+        {
+          "source": "12级本科马克思选择题练习 - 副本.txt",
+          "answer": "A"
+        },
+        {
+          "source": "12级本科马克思选择题练习.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题(2).txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理机考试题.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题3.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "id": "my-19f2babd6787",
+      "stem": "垄断价格( )。",
+      "selected": "B",
+      "otherAnswers": [
+        "BC"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "BC"
+        }
+      ]
+    },
+    {
+      "id": "my-b980db690dcc",
+      "stem": "剩余价值( )",
+      "selected": "ABD",
+      "otherAnswers": [
+        "ACD"
+      ],
+      "sources": [
+        {
+          "source": "马克思主义原理概论选择题题库.txt",
+          "answer": "ABD"
+        },
+        {
+          "source": "马原3.txt",
+          "answer": "ACD"
+        }
+      ]
+    },
+    {
+      "id": "my-b6f994f564be",
+      "stem": "正确发挥意识能动作用的最基本的前提是( )",
+      "selected": "C",
+      "otherAnswers": [
+        "B"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "C"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "id": "my-ced3f7462ccc",
+      "stem": "空间是指( )",
+      "selected": "B",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "B"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "my-bb7a824f87a5",
+      "stem": "规律是指( )",
+      "selected": "A",
+      "otherAnswers": [
+        "D"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "A"
+        },
+        {
+          "source": "马原考试题1.txt",
+          "answer": "D"
+        }
+      ]
+    }
+  ],
+  "sourceCounts": {
+    "12级本科马克思选择题练习 - 副本.txt": 288,
+    "12级本科马克思选择题练习.txt": 288,
+    "马克思主义原理概论选择题题库.txt": 235,
+    "马克思主义基本原理机考试题(2).txt": 661,
+    "马克思主义基本原理机考试题.txt": 661,
+    "马克思主义基本原理概论选择题题库.txt": 876,
+    "马克思知识梳理.txt": 0,
+    "马克思题库(1).txt": 414,
+    "马克思题库.txt": 414,
+    "马原1.txt": 752,
+    "马原2.txt": 386,
+    "马原3.txt": 44,
+    "马原考试题1.txt": 602,
+    "马原考试题2.txt": 96,
+    "马原考试题3.txt": 661,
+    "马原考试题4.txt": 386
+  }
+}

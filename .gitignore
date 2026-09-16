@@ -1,0 +1,6 @@
+source_docs/
+converted_docs/
+extracted_text/
+.sites-runtime/
+*.tmp
+
