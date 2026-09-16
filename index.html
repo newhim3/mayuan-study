@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#a61b29" />
+    <meta name="description" content="马克思主义基本原理本地刷题工具，支持错题、收藏、进度与离线使用。" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./styles.css?v=4" />
+    <title>马原刷题</title>
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <header class="topbar">
+        <button class="brand" data-action="home" aria-label="返回首页">
+          <span class="brand-mark" aria-hidden="true">马</span>
+          <span><strong>马原刷题</strong><small id="bank-count">题库载入中</small></span>
+        </button>
+        <div class="top-actions">
+          <button id="install-button" class="icon-button hidden" aria-label="安装到桌面" title="安装到桌面">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 14v5h14v-5"/></svg>
+          </button>
+          <button id="theme-button" class="icon-button" aria-label="切换深色模式" title="切换深色模式">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <main id="main" tabindex="-1">
+        <section id="home-view" class="view active" aria-labelledby="home-title">
+          <div class="dashboard-grid">
+            <article class="progress-card">
+              <div class="progress-copy">
+                <p class="eyebrow">学习进度</p>
+                <h1 id="home-title"><span id="completed-count">0</span> 道已完成</h1>
+                <p id="progress-summary">还没有答题记录，今天从第一题开始。</p>
+                <button class="primary-button" data-mode="continue">继续刷题</button>
+              </div>
+              <div class="progress-ring" id="progress-ring" style="--progress: 0">
+                <div><strong id="progress-percent">0%</strong><span>总进度</span></div>
+              </div>
+            </article>
+
+            <article class="today-card">
+              <div><p class="eyebrow">今日完成</p><strong id="today-count">0</strong><span>题</span></div>
+              <div><p class="eyebrow">累计正确率</p><strong id="accuracy-count">--</strong><span>%</span></div>
+              <div><p class="eyebrow">连续学习</p><strong id="streak-count">0</strong><span>天</span></div>
+            </article>
+          </div>
+
+          <section class="section-block" aria-labelledby="modes-title">
+            <div class="section-heading"><div><p class="eyebrow">开始练习</p><h2 id="modes-title">选择刷题方式</h2></div></div>
+            <div class="mode-grid">
+              <button class="mode-card accent" data-mode="sequential">
+                <span class="mode-icon">序</span><span><strong>顺序练习</strong><small>按题库顺序稳步完成</small></span><span class="arrow">→</span>
+              </button>
+              <button class="mode-card" data-mode="random">
+                <span class="mode-icon">随</span><span><strong>随机练习</strong><small>打乱题目检验掌握情况</small></span><span class="arrow">→</span>
+              </button>
+              <button class="mode-card" data-mode="wrong">
+                <span class="mode-icon">错</span><span><strong>错题重练</strong><small id="wrong-mode-count">暂无错题</small></span><span class="arrow">→</span>
+              </button>
+              <button class="mode-card" data-mode="favorites">
+                <span class="mode-icon">藏</span><span><strong>收藏题目</strong><small id="favorite-mode-count">尚未收藏</small></span><span class="arrow">→</span>
+              </button>
+              <button class="mode-card" data-mode="machine">
+                <span class="mode-icon">机</span><span><strong>机考重点</strong><small id="machine-mode-count">正在整理</small></span><span class="arrow">→</span>
+              </button>
+              <button class="mode-card" data-action="show-mocks">
+                <span class="mode-icon">考</span><span><strong>模拟测试</strong><small>分卷测试，交卷后统一判分</small></span><span class="arrow">↓</span>
+              </button>
+            </div>
+          </section>
+
+          <section id="mock-section" class="section-block" aria-labelledby="mock-title">
+            <div class="section-heading"><div><p class="eyebrow">考试题单独成卷</p><h2 id="mock-title">模拟测试</h2></div><span class="section-note">作答时隐藏答案</span></div>
+            <div id="mock-list" class="mock-grid" aria-live="polite"></div>
+          </section>
+
+          <section class="section-block" aria-labelledby="chapters-title">
+            <div class="section-heading"><div><p class="eyebrow">专项巩固</p><h2 id="chapters-title">章节练习</h2></div><button class="text-button" id="reset-progress">重置记录</button></div>
+            <div id="chapter-list" class="chapter-list" aria-live="polite"></div>
+          </section>
+        </section>
+
+        <section id="practice-view" class="view" aria-labelledby="question-title">
+          <div class="practice-header">
+            <button class="back-button" data-action="home" aria-label="退出练习">←</button>
+            <div class="practice-progress">
+              <div><strong id="practice-label">顺序练习</strong><span id="question-position">1 / 1</span></div>
+              <div class="progress-track"><span id="practice-progress-bar"></span></div>
+            </div>
+            <button id="navigator-button" class="icon-button navigator-button" aria-label="打开题号卡">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+            </button>
+          </div>
+
+          <div class="practice-layout">
+            <article class="question-card">
+              <div class="question-meta">
+                <span id="question-type" class="type-chip">单选题</span>
+                <span id="question-chapter" class="chapter-chip"></span>
+                <button id="favorite-button" class="favorite-button" aria-pressed="false"><span>☆</span> 收藏</button>
+              </div>
+              <div id="history-status" class="history-status">本题尚未作答</div>
+              <h1 id="question-title" class="question-title"></h1>
+              <p id="multiple-hint" class="multiple-hint hidden">本题为多选题，选择全部答案后提交。</p>
+              <div id="options" class="options" role="group" aria-label="答案选项"></div>
+              <div id="result-panel" class="result-panel hidden" aria-live="polite"></div>
+              <div class="question-actions">
+                <button id="previous-button" class="secondary-button">上一题</button>
+                <button id="submit-button" class="primary-button grow">提交答案</button>
+                <button id="next-button" class="secondary-button">下一题</button>
+              </div>
+            </article>
+
+            <aside class="desktop-navigator" aria-label="题号导航">
+              <div class="navigator-heading"><strong>题目导航</strong><span id="desktop-nav-summary"></span></div>
+              <div id="desktop-question-grid" class="question-grid"></div>
+              <div class="legend"><span><i class="correct"></i>正确</span><span><i class="wrong"></i>错误</span><span><i class="unanswered"></i>未做</span></div>
+            </aside>
+          </div>
+        </section>
+
+        <section id="list-view" class="view" aria-labelledby="list-title">
+          <div class="list-header"><div><p class="eyebrow" id="list-eyebrow">题目集合</p><h1 id="list-title">错题本</h1></div><span id="list-count" class="count-pill">0 题</span></div>
+          <div id="question-list" class="question-list"></div>
+        </section>
+
+        <section id="stats-view" class="view" aria-labelledby="stats-title">
+          <div class="list-header"><div><p class="eyebrow">学习数据</p><h1 id="stats-title">掌握情况</h1></div></div>
+          <div id="stats-content"></div>
+        </section>
+      </main>
+
+      <nav class="bottom-nav" aria-label="主要导航">
+        <button class="active" data-tab="home"><span>⌂</span>首页</button>
+        <button data-tab="practice"><span>◉</span>刷题</button>
+        <button data-tab="wrong"><span>×</span>错题</button>
+        <button data-tab="favorites"><span>☆</span>收藏</button>
+        <button data-tab="stats"><span>▥</span>统计</button>
+      </nav>
+
+      <div id="navigator-overlay" class="overlay hidden" aria-hidden="true">
+        <button class="overlay-backdrop" aria-label="关闭题号卡"></button>
+        <aside class="navigator-sheet" role="dialog" aria-modal="true" aria-labelledby="navigator-title">
+          <div class="sheet-handle"></div>
+          <div class="navigator-heading"><strong id="navigator-title">题目导航</strong><button id="close-navigator" class="text-button">完成</button></div>
+          <div id="mobile-question-grid" class="question-grid"></div>
+          <div class="legend"><span><i class="correct"></i>正确</span><span><i class="wrong"></i>错误</span><span><i class="flagged"></i>收藏</span><span><i class="unanswered"></i>未做</span></div>
+        </aside>
+      </div>
+
+      <div id="toast" class="toast hidden" role="status"></div>
+      <div id="loading" class="loading"><span></span><p>正在整理题库…</p></div>
+    </div>
+    <script src="./app.js?v=4" defer></script>
+  </body>
+</html>
