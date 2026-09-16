@@ -5,7 +5,7 @@
   "duplicateGroups": 1793,
   "withAnswer": 2236,
   "withoutAnswer": 512,
-  "answerConflicts": 167,
+  "answerConflicts": 165,
   "conflicts": [
     {
       "id": "my-5a47e7299326",
@@ -38,8 +38,7 @@
       "stem": "社会主义取代资本主义将是一个长期的历史过程,这是由于( )",
       "selected": "ABCDE",
       "otherAnswers": [
-        "ABC",
-        "C"
+        "ABC"
       ],
       "sources": [
         {
@@ -59,20 +58,12 @@
           "answer": "ABCDE"
         },
         {
-          "source": "马原2.txt",
-          "answer": "C"
-        },
-        {
           "source": "马原考试题3.txt",
           "answer": "ABCDE"
         },
         {
           "source": "马原考试题3.txt",
           "answer": "ABCDE"
-        },
-        {
-          "source": "马原考试题4.txt",
-          "answer": "C"
         },
         {
           "source": "马克思主义基本原理概论选择题题库.txt",
@@ -1159,68 +1150,6 @@
       ]
     },
     {
-      "id": "my-bad9eb4e4f8f",
-      "stem": "下列选项中,体现量变引起质变的哲学道理的有【A 】【B 】【 C】【 】【 】",
-      "selected": "ABC",
-      "otherAnswers": [
-        "A"
-      ],
-      "sources": [
-        {
-          "source": "马原考试题1.txt",
-          "answer": "A"
-        },
-        {
-          "source": "马克思主义基本原理概论选择题题库.txt",
-          "answer": "ABC"
-        },
-        {
-          "source": "马原2.txt",
-          "answer": "ABC"
-        },
-        {
-          "source": "马原考试题4.txt",
-          "answer": "ABC"
-        }
-      ]
-    },
-    {
-      "id": "my-e69f358cda84",
-      "stem": "下列选项中,属于唯物辩证法基本规律的有【A 】【B】【 D】【 】【 】",
-      "selected": "A",
-      "otherAnswers": [
-        "ABD"
-      ],
-      "sources": [
-        {
-          "source": "马原考试题1.txt",
-          "answer": "A"
-        },
-        {
-          "source": "马克思主义基本原理概论选择题题库.txt",
-          "answer": "ABD"
-        }
-      ]
-    },
-    {
-      "id": "my-1717a6ecc189",
-      "stem": "辩证唯物主义物质观的重要理论意义在于它有利于【A】【B】【D】【】【】",
-      "selected": "A",
-      "otherAnswers": [
-        "ABD"
-      ],
-      "sources": [
-        {
-          "source": "马原考试题1.txt",
-          "answer": "A"
-        },
-        {
-          "source": "马克思主义基本原理概论选择题题库.txt",
-          "answer": "ABD"
-        }
-      ]
-    },
-    {
       "id": "my-6cf42fee1fba",
       "stem": "人类与自然界的关系和动物与自然界的关系具有不同的性质,其表现有( )",
       "selected": "ABCE",
@@ -1235,24 +1164,6 @@
         {
           "source": "马克思主义基本原理概论选择题题库.txt",
           "answer": "ABCD"
-        }
-      ]
-    },
-    {
-      "id": "my-b0e84f9d6705",
-      "stem": "下列各对矛盾属于社会基本矛盾的有【C 】【 D】【 】【 】【 】",
-      "selected": "C",
-      "otherAnswers": [
-        "BD"
-      ],
-      "sources": [
-        {
-          "source": "马原考试题1.txt",
-          "answer": "C"
-        },
-        {
-          "source": "马克思主义基本原理概论选择题题库.txt",
-          "answer": "BD"
         }
       ]
     },
@@ -1329,6 +1240,42 @@
         {
           "source": "马克思主义基本原理概论选择题题库.txt",
           "answer": "AC"
+        }
+      ]
+    },
+    {
+      "id": "my-14850e576577",
+      "stem": "科学实践观的确立揭示和有力地证明了( )",
+      "selected": "ABCDE",
+      "otherAnswers": [
+        "ABCD"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "ABCDE"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "ABCD"
+        }
+      ]
+    },
+    {
+      "id": "my-b0e84f9d6705",
+      "stem": "下列各对矛盾属于社会基本矛盾的有( )",
+      "selected": "CD",
+      "otherAnswers": [
+        "BD"
+      ],
+      "sources": [
+        {
+          "source": "马原考试题1.txt",
+          "answer": "CD"
+        },
+        {
+          "source": "马克思主义基本原理概论选择题题库.txt",
+          "answer": "BD"
         }
       ]
     },

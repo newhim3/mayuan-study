@@ -11,6 +11,8 @@ from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Iterable
 
+from explanation_engine import build_explanation
+
 
 QUESTION_RE = re.compile(r"^\s*(\d{1,4})\s*[、.．。]\s*(.+)$")
 EMBEDDED_QUESTION_RE = re.compile(
@@ -22,7 +24,6 @@ OPTION_RE = re.compile(
 INLINE_ANSWER_RES = [
     re.compile(r"【\s*正确答案(?:是)?\s*】\s*[:：]?\s*([A-F]{1,6})", re.I),
     re.compile(r"(?:正确答案|参考答案|答案)\s*[:：]\s*([A-F]{1,6})", re.I),
-    re.compile(r"[（(【\[]\s*([A-F]{1,6})\s*[）)】\]]"),
 ]
 ANSWER_KEY_RE = re.compile(r"(\d{1,4})\s*[.、．]?\s*([A-F]{1,6})(?=\s|\d|[，,。；;】\]）)]|$)", re.I)
 CHAPTER_RE = re.compile(r"第\s*[一二三四五六七八九十百0-9]+\s*章[^\n]{0,40}")
@@ -158,18 +159,38 @@ def split_options(raw: str) -> tuple[str, dict[str, str]]:
 
 
 def extract_inline_answer(raw: str, stem: str) -> str | None:
+    boxed_tail = re.search(r"((?:【\s*[A-F]?\s*】\s*){1,6})$", stem, flags=re.I)
+    if boxed_tail:
+        letters = re.findall(r"[A-F]", boxed_tail.group(1), flags=re.I)
+        if letters:
+            return normalize_answer("".join(letters))
     for pattern in INLINE_ANSWER_RES:
         match = pattern.search(raw)
         if match:
             return normalize_answer(match.group(1))
-    match = re.search(r"[（(【\[]\s*([A-F]{1,6})\s*[）)】\]]\s*$", stem)
+    match = re.search(
+        r"[（(【\[]\s*([A-F]{1,6})\s*[）)】\]]\s*[)）]?\s*(?:错误|产生|实现的?|提出|属于|是|的)?\s*[。；,.，;]?\s*$",
+        stem,
+        flags=re.I,
+    )
     return normalize_answer(match.group(1)) if match else None
 
 
-def clean_stem(stem: str) -> str:
+def clean_stem(stem: str, answer: str | None = None) -> str:
     stem = re.sub(r"【\s*正确答案(?:是)?\s*】\s*[:：]?\s*[A-F]{1,6}", "", stem)
     stem = re.sub(r"(?:正确答案|参考答案|答案)\s*[:：]\s*[A-F]{1,6}", "", stem)
-    stem = re.sub(r"[（(【\[]\s*[A-F]{1,6}\s*[）)】\]]\s*$", "（ ）", stem)
+    stem = re.sub(r"(?:【\s*[A-F]?\s*】\s*){1,6}$", "（ ）", stem, flags=re.I)
+    if answer:
+        def replace_matching_answer(match: re.Match[str]) -> str:
+            return "（ ）" if normalize_answer(match.group(1)) == answer else match.group(0)
+
+        stem = re.sub(
+            r"[（(【\[]\s*([A-F]{1,8})\s*[）)】\]]",
+            replace_matching_answer,
+            stem,
+            flags=re.I,
+        )
+        stem = re.sub(r"（\s*）\s*[)）]", "（ ）", stem)
     return normalize_spaces(stem).rstrip("：:")
 
 
@@ -200,7 +221,7 @@ def parse_source(path: Path) -> list[Candidate]:
                     number=current_number,
                     chapter=current_chapter,
                     question_type=qtype,
-                    stem=clean_stem(stem),
+                    stem=clean_stem(stem, answer),
                     options=options,
                     answer=answer,
                     raw=raw,
@@ -341,16 +362,6 @@ def choose_answer(group: MergedQuestion) -> tuple[str | None, list[str]]:
     answer, _ = counts.most_common(1)[0]
     conflicts = sorted(value for value in counts if value != answer)
     return answer, conflicts
-
-
-def derive_explanation(answer: str | None, options: dict[str, str]) -> str:
-    if not answer:
-        return "原始题库未提供答案，已保留题目供后续人工校对。"
-    selected = [options.get(letter, "") for letter in answer if options.get(letter)]
-    if not selected:
-        return f"正确答案为 {answer}。原始题库未提供详细解析。"
-    joined = "；".join(f"{letter}．{options[letter]}" for letter in answer if letter in options)
-    return f"本题正确答案为 {answer}。对应选项为：{joined}。原始资料未附逐项解析，后续可继续补充知识点说明。"
 
 
 MOCK_BLUEPRINT = {
@@ -507,7 +518,13 @@ def serialize(groups: Iterable[MergedQuestion]) -> tuple[list[dict[str, object]]
             "stem": representative.stem,
             "options": representative.options,
             "answer": answer,
-            "explanation": derive_explanation(answer, representative.options),
+            "explanation": build_explanation(
+                representative.stem,
+                answer,
+                representative.options,
+                chapter,
+                qtype,
+            ),
             "sources": sources,
             "machineExam": machine_exam,
             "mockPapers": mock_papers,

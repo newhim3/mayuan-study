@@ -3,12 +3,12 @@
   "optionCounts": {
     "2": 1,
     "3": 2,
-    "4": 2380,
-    "5": 365
+    "4": 2379,
+    "5": 366
   },
   "typeCounts": {
-    "multiple": 1074,
-    "single": 1589,
+    "multiple": 1082,
+    "single": 1581,
     "true_false": 85
   },
   "uncategorized": 593,

@@ -3,4 +3,4 @@ converted_docs/
 extracted_text/
 .sites-runtime/
 *.tmp
-
+__pycache__/
