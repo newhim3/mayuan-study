@@ -353,6 +353,111 @@ def derive_explanation(answer: str | None, options: dict[str, str]) -> str:
     return f"本题正确答案为 {answer}。对应选项为：{joined}。原始资料未附逐项解析，后续可继续补充知识点说明。"
 
 
+MOCK_BLUEPRINT = {
+    "single": [
+        ("导论", 3),
+        ("第一章", 8),
+        ("第二章", 6),
+        ("第三章", 5),
+        ("第四章", 6),
+        ("第五章", 4),
+        ("第六章", 4),
+        ("第七章", 4),
+    ],
+    "multiple": [
+        ("导论", 2),
+        ("第一章", 4),
+        ("第二章", 3),
+        ("第三章", 2),
+        ("第四章", 3),
+        ("第五章", 2),
+        ("第六章", 2),
+        ("第七章", 2),
+    ],
+}
+
+
+def rebuild_mock_papers(questions: list[dict[str, object]], paper_count: int = 8) -> dict[str, object]:
+    """Build balanced, non-overlapping full-syllabus mock papers."""
+    pools: dict[tuple[str, str], list[dict[str, object]]] = {}
+    for question in questions:
+        answer = str(question.get("answer") or "")
+        options = question.get("options") or {}
+        if (
+            question.get("needsReview")
+            or question.get("chapter") == "未分类"
+            or not answer
+            or answer[0] not in options
+        ):
+            continue
+        chapter = str(question["chapter"])
+        question_type = str(question["type"])
+        prefix = next(
+            (
+                chapter_prefix
+                for blueprint in MOCK_BLUEPRINT.values()
+                for chapter_prefix, _ in blueprint
+                if chapter.startswith(chapter_prefix)
+            ),
+            None,
+        )
+        if prefix and question_type in MOCK_BLUEPRINT:
+            pools.setdefault((prefix, question_type), []).append(question)
+
+    for pool in pools.values():
+        pool.sort(
+            key=lambda item: (
+                not bool(item.get("mockPapers")),
+                not bool(item.get("machineExam")),
+                hashlib.sha1(str(item["id"]).encode("utf-8")).hexdigest(),
+            )
+        )
+
+    papers: dict[str, dict[str, list[dict[str, object]]]] = {
+        f"全章模拟卷 {index:02d}": {"single": [], "multiple": []}
+        for index in range(1, paper_count + 1)
+    }
+    for question_type, blueprint in MOCK_BLUEPRINT.items():
+        for chapter_prefix, per_paper in blueprint:
+            pool = pools.get((chapter_prefix, question_type), [])
+            required = per_paper * paper_count
+            if len(pool) < required:
+                raise ValueError(
+                    f"Not enough {question_type} questions for {chapter_prefix}: {len(pool)} < {required}"
+                )
+            for paper_index, paper_name in enumerate(papers):
+                start = paper_index * per_paper
+                papers[paper_name][question_type].extend(pool[start : start + per_paper])
+
+    for question in questions:
+        question["mockPapers"] = []
+        question["mockOrder"] = {}
+
+    paper_report: dict[str, object] = {}
+    for paper_name, sections in papers.items():
+        ordered: list[dict[str, object]] = []
+        for question_type in ("single", "multiple"):
+            section = sorted(
+                sections[question_type],
+                key=lambda item: hashlib.sha1(
+                    f"{paper_name}|{item['id']}".encode("utf-8")
+                ).hexdigest(),
+            )
+            ordered.extend(section)
+        chapter_counts = Counter()
+        for order, question in enumerate(ordered, start=1):
+            question["mockPapers"] = [paper_name]
+            question["mockOrder"] = {paper_name: order}
+            chapter_counts[str(question["chapter"]).split(" ", 1)[0]] += 1
+        paper_report[paper_name] = {
+            "total": len(ordered),
+            "single": len(sections["single"]),
+            "multiple": len(sections["multiple"]),
+            "chapters": dict(chapter_counts),
+        }
+    return paper_report
+
+
 def serialize(groups: Iterable[MergedQuestion]) -> tuple[list[dict[str, object]], dict[str, object]]:
     output: list[dict[str, object]] = []
     conflicts: list[dict[str, object]] = []
@@ -460,6 +565,7 @@ def main() -> None:
 
     groups = dedupe(all_candidates)
     questions, report = serialize(groups)
+    report["mockPapers"] = rebuild_mock_papers(questions)
     report["sourceCounts"] = source_counts
 
     args.output.parent.mkdir(parents=True, exist_ok=True)

@@ -526,6 +526,8 @@ function registerWebMcpTools() {
   const context = document.modelContext;
   if (!context?.registerTool) return;
   const safeRegister = (tool) => Promise.resolve(context.registerTool(tool)).catch(() => {});
+  const mockPaperNames = [...new Set(state.usableQuestions.flatMap((question) => question.mockPapers || []))]
+    .sort((left, right) => left.localeCompare(right, "zh-CN", { numeric: true }));
   safeRegister({
     name: "start_practice",
     title: "开始刷题",
@@ -537,8 +539,8 @@ function registerWebMcpTools() {
   safeRegister({
     name: "start_mock_test",
     title: "开始模拟测试",
-    description: "按原试卷开始模拟测试，作答期间不显示答案，交卷后统一评分。",
-    inputSchema: { type: "object", properties: { paper: { type: "string", enum: ["马原考试题1", "马原考试题2", "马原考试题3", "马原考试题4"] } }, required: ["paper"], additionalProperties: false },
+    description: "开始一套覆盖导论至第七章的模拟测试，作答期间不显示答案，交卷后统一评分。",
+    inputSchema: { type: "object", properties: { paper: { type: "string", enum: mockPaperNames } }, required: ["paper"], additionalProperties: false },
     annotations: { readOnlyHint: false, untrustedContentHint: false },
     execute({ paper }) { startMockPaper(paper); return { paper, questionCount: state.session.length }; },
   });
@@ -606,7 +608,7 @@ async function init() {
   loadLocalState();
   bindEvents();
   try {
-    const response = await fetch("./data/questions.json");
+    const response = await fetch("./data/questions.json?v=6");
     if (!response.ok) throw new Error("题库载入失败");
     state.questions = await response.json();
     state.usableQuestions = state.questions.filter((question) => question.answer && !question.needsReview && Object.keys(question.options || {}).includes(question.answer[0]));
