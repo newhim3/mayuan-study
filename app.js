@@ -367,7 +367,8 @@ function submitAnswer() {
   const panel = $("#result-panel");
   panel.className = `result-panel${correct ? "" : " wrong"}`;
   panel.innerHTML = `<strong>${correct ? "回答正确" : `回答错误 · 正确答案 ${question.answer}`}</strong><p>${escapeHtml(question.explanation)}</p>`;
-  $("#submit-button").textContent = state.sessionIndex < state.session.length - 1 ? "下一题" : "已完成";
+  $("#submit-button").textContent = state.sessionIndex < state.session.length - 1 ? "已提交" : "已完成";
+  $("#submit-button").disabled = true;
   updateHistoryStatus(state.records[question.id]);
   renderNavigator();
   updateDashboard();
@@ -608,7 +609,7 @@ async function init() {
   loadLocalState();
   bindEvents();
   try {
-    const response = await fetch("./data/questions.json?v=7");
+    const response = await fetch("./data/questions.json?v=9");
     if (!response.ok) throw new Error("题库载入失败");
     state.questions = await response.json();
     state.usableQuestions = state.questions.filter((question) => question.answer && !question.needsReview && Object.keys(question.options || {}).includes(question.answer[0]));
