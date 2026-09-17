@@ -1,5 +1,5 @@
-const CACHE = "mayuan-study-v9";
-const ASSETS = ["./", "./index.html", "./styles.css?v=9", "./app.js?v=9", "./manifest.webmanifest", "./favicon.svg", "./data/questions.json?v=9"];
+const CACHE = "mayuan-study-v10";
+const ASSETS = ["./", "./index.html", "./styles.css?v=10", "./app.js?v=10", "./manifest.webmanifest", "./favicon.svg", "./data/questions.json?v=10"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(ASSETS)));
