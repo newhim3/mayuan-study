@@ -1,0 +1,12 @@
+{
+  "usableQuestions": 2070,
+  "structuredExplanations": 2070,
+  "missingSections": [],
+  "missingOptionAnalysis": [],
+  "genericConceptCount": 75,
+  "genericConceptRate": 0.0362,
+  "shortExplanationIds": [],
+  "uniqueExplanations": 2050,
+  "repeatedExplanationGroups": 19,
+  "maximumRepeat": 3
+}
