@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -28,8 +28,19 @@ jobs:
           gradle-version: "8.9"
       - name: Build debug APK
         run: gradle :app:assembleDebug --no-daemon
+      - name: Prepare APK file
+        run: cp app/build/outputs/apk/debug/app-debug.apk mayuan-study.apk
       - uses: actions/upload-artifact@v4
         with:
           name: mayuan-study-debug-apk
-          path: android-webview/app/build/outputs/apk/debug/app-debug.apk
+          path: android-webview/mayuan-study.apk
           if-no-files-found: error
+      - name: Publish downloadable test release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh release create "apk-build-${{ github.run_number }}"
+          mayuan-study.apk
+          --title "马原刷题 APK 测试版 #${{ github.run_number }}"
+          --notes "在线 WebView 测试版。安装后会加载 GitHub Pages 上的最新题库内容。"
+          --latest
