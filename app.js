@@ -171,6 +171,16 @@ function shuffled(items) {
   return copy;
 }
 
+function questionTypeRank(question) {
+  if (question.type === "single") return 0;
+  if (question.type === "true_false") return 1;
+  return 2;
+}
+
+function groupByQuestionType(items) {
+  return [...items].sort((left, right) => questionTypeRank(left) - questionTypeRank(right));
+}
+
 function startSession(mode, chapter = null, focusId = null) {
   let questions = state.reliableQuestions;
   let label = "顺序练习";
@@ -198,6 +208,8 @@ function startSession(mode, chapter = null, focusId = null) {
     label = "继续练习";
   }
 
+  questions = groupByQuestionType(questions);
+
   if (!questions.length) {
     showToast(mode === "wrong" ? "还没有错题" : mode === "favorites" ? "还没有收藏题目" : "这个集合暂时没有可用题目");
     return;
@@ -213,7 +225,8 @@ function startSession(mode, chapter = null, focusId = null) {
 function startMockPaper(paper) {
   const questions = state.usableQuestions
     .filter((question) => (question.mockPapers || []).includes(paper))
-    .sort((left, right) => (left.mockOrder?.[paper] ?? 99999) - (right.mockOrder?.[paper] ?? 99999));
+    .sort((left, right) => questionTypeRank(left) - questionTypeRank(right)
+      || (left.mockOrder?.[paper] ?? 99999) - (right.mockOrder?.[paper] ?? 99999));
   if (!questions.length) {
     showToast("这套试卷暂时没有已校验题目");
     return;
@@ -251,13 +264,16 @@ function renderQuestion() {
     : state.sessionLabel;
   $("#question-position").textContent = `${state.sessionIndex + 1} / ${state.session.length}`;
   $("#practice-progress-bar").style.width = `${progress}%`;
-  const typeLabel = multi ? "多选题" : question.type === "true_false" ? "判断题" : "单选题";
-  $("#question-type").textContent = question.machineExam && !state.examMode ? `机考重点 · ${typeLabel}` : typeLabel;
+  const typeKind = multi ? "multiple" : question.type === "true_false" ? "true-false" : "single";
+  const typeLabel = multi ? "多选题 · 可多选" : question.type === "true_false" ? "判断题 · 选一项" : "单选题 · 选一项";
+  const typeChip = $("#question-type");
+  typeChip.dataset.type = typeKind;
+  typeChip.textContent = question.machineExam && !state.examMode ? `机考重点 · ${typeLabel}` : typeLabel;
   $("#question-chapter").textContent = question.chapter === "未分类"
     ? (state.examMode ? "模拟测试来源" : question.machineExam ? "机考来源" : "来源未归章")
     : formatChapter(question.chapter);
   $("#question-title").textContent = question.stem;
-  $("#multiple-hint").classList.toggle("hidden", !multi);
+  $("#multiple-hint").classList.add("hidden");
   const favorite = isFavorite(question.id);
   $("#favorite-button").setAttribute("aria-pressed", favorite);
   $("#favorite-button span").textContent = favorite ? "★" : "☆";
@@ -609,7 +625,7 @@ async function init() {
   loadLocalState();
   bindEvents();
   try {
-    const response = await fetch("./data/questions.json?v=9");
+    const response = await fetch("./data/questions.json?v=10");
     if (!response.ok) throw new Error("题库载入失败");
     state.questions = await response.json();
     state.usableQuestions = state.questions.filter((question) => question.answer && !question.needsReview && Object.keys(question.options || {}).includes(question.answer[0]));
