@@ -18,6 +18,7 @@ const state = {
   records: {},
   favorites: [],
   lastQuestionId: null,
+  lastAnsweredId: null,
   theme: "light",
 };
 
@@ -30,6 +31,7 @@ function loadLocalState() {
     state.records = saved.records || {};
     state.favorites = saved.favorites || [];
     state.lastQuestionId = saved.lastQuestionId || null;
+    state.lastAnsweredId = saved.lastAnsweredId || null;
     state.theme = saved.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
   } catch {
     state.records = {};
@@ -43,6 +45,7 @@ function saveLocalState() {
     records: state.records,
     favorites: state.favorites,
     lastQuestionId: state.lastQuestionId,
+    lastAnsweredId: state.lastAnsweredId,
     theme: state.theme,
   }));
 }
@@ -111,6 +114,8 @@ function updateDashboard() {
   $("#progress-summary").textContent = answered.length
     ? `已覆盖题库的 ${progress}%，还有 ${(total - answered.length).toLocaleString()} 道等待完成。`
     : "还没有答题记录，今天从第一题开始。";
+  const lastAnswered = state.reliableQuestions.find((question) => question.id === state.lastAnsweredId);
+  $("#resume-hint").textContent = lastAnswered ? `上次答到：${lastAnswered.stem.slice(0, 34)}${lastAnswered.stem.length > 34 ? "…" : ""}` : "从上次位置继续";
   $("#today-count").textContent = today;
   $("#accuracy-count").textContent = totalAttempts ? Math.round((correctAttempts / totalAttempts) * 100) : "--";
   $("#streak-count").textContent = calculateStreak();
@@ -216,7 +221,7 @@ function startSession(mode, chapter = null, focusId = null) {
   }
   state.session = questions;
   state.sessionLabel = label;
-  state.sessionIndex = Math.max(0, focusId ? questions.findIndex((question) => question.id === focusId) : mode === "continue" && state.lastQuestionId ? questions.findIndex((question) => question.id === state.lastQuestionId) : 0);
+  state.sessionIndex = Math.max(0, focusId ? questions.findIndex((question) => question.id === focusId) : mode === "continue" && (state.lastAnsweredId || state.lastQuestionId) ? questions.findIndex((question) => question.id === (state.lastAnsweredId || state.lastQuestionId)) : 0);
   if (state.sessionIndex < 0) state.sessionIndex = 0;
   renderQuestion();
   showView("practice");
@@ -250,13 +255,13 @@ function currentQuestion() {
 function renderQuestion() {
   const question = currentQuestion();
   if (!question) return;
-  state.selected = new Set(state.examMode ? (state.examAnswers[question.id] || []) : []);
-  state.revealed = state.examMode && state.examSubmitted;
+  const record = questionRecord(question.id);
+  state.selected = new Set(state.examMode ? (state.examAnswers[question.id] || []) : (record.lastAnswer || []));
+  state.revealed = state.examMode ? state.examSubmitted : record.attempts > 0;
   if (!state.examMode) {
     state.lastQuestionId = question.id;
     saveLocalState();
   }
-  const record = questionRecord(question.id);
   const multi = question.type === "multiple";
   const progress = ((state.sessionIndex + 1) / state.session.length) * 100;
   $("#practice-label").textContent = state.examSubmitted && state.examScore
@@ -378,6 +383,7 @@ function submitAnswer() {
     lastAnswer: [...state.selected].sort(),
     lastAt: new Date().toISOString(),
   };
+  state.lastAnsweredId = question.id;
   state.revealed = true;
   saveLocalState();
 
@@ -395,13 +401,6 @@ function submitAnswer() {
   updateHistoryStatus(state.records[question.id]);
   renderNavigator();
   updateDashboard();
-  // 答对后短暂停留，让用户看到反馈；答错则停留在本题查看解析。
-  if (correct && state.sessionIndex < state.session.length - 1) {
-    const submittedQuestionId = question.id;
-    window.setTimeout(() => {
-      if (state.revealed && currentQuestion()?.id === submittedQuestionId) goToQuestion(state.sessionIndex + 1);
-    }, 900);
-  }
 }
 
 function submitExamAnswer() {
@@ -548,6 +547,7 @@ function resetProgress() {
   if (!confirm("确定清空所有答题记录吗？收藏内容会保留。")) return;
   state.records = {};
   state.lastQuestionId = null;
+  state.lastAnsweredId = null;
   saveLocalState();
   updateDashboard();
   showToast("答题记录已清空");
