@@ -2,10 +2,7 @@ name: Build Android APK
 
 on:
   push:
-    branches: [main]
-    paths:
-      - "android-webview/**"
-      - ".github/workflows/build-apk.yml"
+    branches: [main, gh-pages]
   workflow_dispatch:
 
 permissions:
@@ -18,7 +15,11 @@ jobs:
       run:
         working-directory: android-webview
     steps:
+      # Always build the Android wrapper from main. The wrapper loads the
+      # latest web app from GitHub Pages at runtime.
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -35,12 +36,12 @@ jobs:
           name: mayuan-study-debug-apk
           path: android-webview/mayuan-study.apk
           if-no-files-found: error
-      - name: Publish downloadable test release
+      - name: Publish downloadable release
         env:
           GH_TOKEN: ${{ github.token }}
         run: >-
           gh release create "apk-build-${{ github.run_number }}"
           mayuan-study.apk
-          --title "马原刷题 APK 测试版 #${{ github.run_number }}"
-          --notes "在线 WebView 测试版。安装后会加载 GitHub Pages 上的最新题库内容。"
+          --title "马原刷题 APK #${{ github.run_number }}"
+          --notes "自动构建版本。安装后会加载 GitHub Pages 上的最新网页内容。"
           --latest
