@@ -274,6 +274,10 @@ function renderQuestion() {
     : formatChapter(question.chapter);
   $("#question-title").textContent = question.stem;
   $("#multiple-hint").classList.add("hidden");
+  if (multi && !state.examMode && !state.revealed) {
+    $("#multiple-hint").textContent = "本题为多选题，选择全部答案后点击“提交答案”。";
+    $("#multiple-hint").classList.remove("hidden");
+  }
   const favorite = isFavorite(question.id);
   $("#favorite-button").setAttribute("aria-pressed", favorite);
   $("#favorite-button span").textContent = favorite ? "★" : "☆";
@@ -313,8 +317,9 @@ function renderQuestion() {
     $("#submit-button").textContent = state.examSubmitted ? "已交卷" : state.sessionIndex === state.session.length - 1 ? "交卷" : "保存并下一题";
     $("#submit-button").disabled = state.examSubmitted;
   } else {
-    $("#submit-button").textContent = "提交答案";
+    $("#submit-button").textContent = multi ? "提交答案" : state.revealed ? "已判题" : "选择答案";
     $("#submit-button").disabled = false;
+    if (!multi && !state.revealed) $("#submit-button").disabled = true;
   }
   $("#previous-button").disabled = state.sessionIndex === 0;
   $("#next-button").disabled = state.sessionIndex === state.session.length - 1;
@@ -345,6 +350,8 @@ function chooseOption(letter) {
     button.classList.toggle("selected", selected);
     button.setAttribute("aria-pressed", selected);
   });
+  // 单选题和判断题选择后立即判题；多选题必须由用户确认提交。
+  if (!state.examMode && question.type !== "multiple") submitAnswer();
 }
 
 function submitAnswer() {
@@ -388,6 +395,13 @@ function submitAnswer() {
   updateHistoryStatus(state.records[question.id]);
   renderNavigator();
   updateDashboard();
+  // 答对后短暂停留，让用户看到反馈；答错则停留在本题查看解析。
+  if (correct && state.sessionIndex < state.session.length - 1) {
+    const submittedQuestionId = question.id;
+    window.setTimeout(() => {
+      if (state.revealed && currentQuestion()?.id === submittedQuestionId) goToQuestion(state.sessionIndex + 1);
+    }, 900);
+  }
 }
 
 function submitExamAnswer() {
@@ -625,7 +639,7 @@ async function init() {
   loadLocalState();
   bindEvents();
   try {
-    const response = await fetch("./data/questions.json?v=10");
+    const response = await fetch("./data/questions.json?v=11");
     if (!response.ok) throw new Error("题库载入失败");
     state.questions = await response.json();
     state.usableQuestions = state.questions.filter((question) => question.answer && !question.needsReview && Object.keys(question.options || {}).includes(question.answer[0]));
