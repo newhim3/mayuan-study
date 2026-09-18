@@ -10,8 +10,9 @@ android {
         applicationId "com.newhim3.studyhub"
         minSdk 23
         targetSdk 35
-        versionCode 1
-        versionName "1.0.0"
+        def buildNumber = project.findProperty("versionCode") ?: "1"
+        versionCode buildNumber.toInteger()
+        versionName "1.0." + buildNumber
     }
 
     buildTypes {
