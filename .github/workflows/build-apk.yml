@@ -15,8 +15,7 @@ jobs:
       run:
         working-directory: android-webview
     steps:
-      # Always build the Android wrapper from main. The wrapper loads the
-      # latest web app from GitHub Pages at runtime.
+      # Build the Android wrapper from main; it loads the latest web app from Pages.
       - uses: actions/checkout@v4
         with:
           ref: main
@@ -27,13 +26,29 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: "8.9"
-      - name: Build debug APK
-        run: gradle :app:assembleDebug --no-daemon
+      - name: Restore signing keystore
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+        run: |
+          test -n "$KEYSTORE_BASE64"
+          echo "$KEYSTORE_BASE64" | base64 --decode > release.keystore
+      - name: Build signed release APK
+        env:
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: >
+          gradle :app:assembleRelease --no-daemon
+          -PversionCode=${{ github.run_number }}
+          -PstoreFile=release.keystore
+          -PstorePassword="$KEYSTORE_PASSWORD"
+          -PkeyAlias="$KEY_ALIAS"
+          -PkeyPassword="$KEY_PASSWORD"
       - name: Prepare APK file
-        run: cp app/build/outputs/apk/debug/app-debug.apk mayuan-study.apk
+        run: cp app/build/outputs/apk/release/app-release.apk mayuan-study.apk
       - uses: actions/upload-artifact@v4
         with:
-          name: mayuan-study-debug-apk
+          name: mayuan-study-release-apk
           path: android-webview/mayuan-study.apk
           if-no-files-found: error
       - name: Publish downloadable release
@@ -43,5 +58,5 @@ jobs:
           gh release create "apk-build-${{ github.run_number }}"
           mayuan-study.apk
           --title "马原刷题 APK #${{ github.run_number }}"
-          --notes "自动构建版本。安装后会加载 GitHub Pages 上的最新网页内容。"
+          --notes "自动签名构建版本。应用启动时会检查最新版本。"
           --latest
