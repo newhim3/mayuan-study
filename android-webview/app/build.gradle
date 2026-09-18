@@ -15,9 +15,19 @@ android {
         versionName "1.0." + buildNumber
     }
 
+    signingConfigs {
+        release {
+            storeFile file(project.findProperty("storeFile") ?: "release.keystore")
+            storePassword project.findProperty("storePassword") ?: ""
+            keyAlias project.findProperty("keyAlias") ?: "mayuan"
+            keyPassword project.findProperty("keyPassword") ?: ""
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
     }
