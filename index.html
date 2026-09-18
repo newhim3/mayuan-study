@@ -36,6 +36,7 @@
                 <h1 id="home-title"><span id="completed-count">0</span> 道已完成</h1>
                 <p id="progress-summary">还没有答题记录，今天从第一题开始。</p>
                 <button class="primary-button" data-mode="continue">继续刷题</button>
+                <small id="resume-hint" class="resume-hint">从上次位置继续</small>
               </div>
               <div class="progress-ring" id="progress-ring" style="--progress: 0">
                 <div><strong id="progress-percent">0%</strong><span>总进度</span></div>
@@ -137,9 +138,9 @@
       <nav class="bottom-nav" aria-label="主要导航">
         <button class="active" data-tab="home"><span>⌂</span>首页</button>
         <button data-tab="practice"><span>◉</span>刷题</button>
-        <button data-tab="wrong"><span>×</span>错题</button>
         <button data-tab="favorites"><span>☆</span>收藏</button>
-        <button data-tab="stats"><span>▥</span>统计</button>
+        <button data-tab="wrong"><span>×</span>错题</button>
+        <button data-tab="stats"><span>▥</span>我的</button>
       </nav>
 
       <div id="navigator-overlay" class="overlay hidden" aria-hidden="true">
