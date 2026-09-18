@@ -95,9 +95,9 @@ public class MainActivity extends Activity {
                     while ((line = reader.readLine()) != null) json.append(line);
                 }
 
-                Matcher tag = Pattern.compile("\\"tag_name\\"\\s*:\\s*\\"apk-build-(\\d+)\\"")
+                Matcher tag = Pattern.compile("\"tag_name\"\\s*:\\s*\"apk-build-(\\d+)\"")
                         .matcher(json);
-                Matcher download = Pattern.compile("\\"browser_download_url\\"\\s*:\\s*\\"([^\\"]*mayuan-study\\.apk)\\"")
+                Matcher download = Pattern.compile("\"browser_download_url\"\\s*:\\s*\"([^\\"]*mayuan-study\\.apk)\"")
                         .matcher(json);
                 if (!tag.find() || !download.find()) return;
 
