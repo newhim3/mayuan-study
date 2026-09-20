@@ -69,6 +69,7 @@ main { width: min(1180px, calc(100% - 40px)); margin: 28px auto 60px; }
 .progress-copy { position: relative; z-index: 1; max-width: 470px; }
 .progress-copy h1, .list-header h1 { margin: 0; font-size: clamp(28px, 4vw, 44px); line-height: 1.18; letter-spacing: -.035em; }
 .progress-copy > p:not(.eyebrow) { margin: 14px 0 26px; color: var(--muted); font-size: 16px; line-height: 1.7; }
+.resume-hint { display: block; margin-top: 10px; max-width: 340px; overflow: hidden; color: var(--muted); font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
 .primary-button, .secondary-button { min-height: 48px; border-radius: 14px; padding: 0 22px; font-weight: 720; cursor: pointer; }
 .primary-button { border: 1px solid var(--brand); background: var(--brand); color: #fff; box-shadow: 0 9px 20px color-mix(in srgb, var(--brand) 25%, transparent); }
 .primary-button:hover { background: var(--brand-dark); }
