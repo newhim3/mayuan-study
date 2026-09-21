@@ -13,6 +13,8 @@ const state = {
   examAnswers: {},
   examScore: null,
   selected: new Set(),
+  sessionAnswered: new Set(),
+  reviewExisting: false,
   revealed: false,
   deferredInstall: null,
   records: {},
@@ -194,6 +196,8 @@ function startSession(mode, chapter = null, focusId = null) {
   state.examPaper = null;
   state.examAnswers = {};
   state.examScore = null;
+  state.sessionAnswered = new Set();
+  state.reviewExisting = mode === "continue";
   if (chapter) {
     questions = questions.filter((question) => question.chapter === chapter);
     label = formatChapter(chapter);
@@ -244,6 +248,8 @@ function startMockPaper(paper) {
   state.examPaper = paper;
   state.examAnswers = {};
   state.examScore = null;
+  state.sessionAnswered = new Set();
+  state.reviewExisting = false;
   renderQuestion();
   showView("practice");
 }
@@ -257,7 +263,7 @@ function renderQuestion() {
   if (!question) return;
   const record = questionRecord(question.id);
   state.selected = new Set(state.examMode ? (state.examAnswers[question.id] || []) : (record.lastAnswer || []));
-  state.revealed = state.examMode ? state.examSubmitted : record.attempts > 0;
+  state.revealed = state.examMode ? state.examSubmitted : state.sessionAnswered.has(question.id) || (state.reviewExisting && record.attempts > 0);
   if (!state.examMode) {
     state.lastQuestionId = question.id;
     saveLocalState();
@@ -384,6 +390,7 @@ function submitAnswer() {
     lastAt: new Date().toISOString(),
   };
   state.lastAnsweredId = question.id;
+  state.sessionAnswered.add(question.id);
   state.revealed = true;
   saveLocalState();
 
