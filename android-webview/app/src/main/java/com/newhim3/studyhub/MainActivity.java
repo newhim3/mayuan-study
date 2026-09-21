@@ -108,13 +108,13 @@ public class MainActivity extends Activity {
 
                 Matcher tag = Pattern.compile("\"tag_name\"\\s*:\\s*\"apk-build-(\\d+)\"")
                         .matcher(json);
-                Matcher download = Pattern.compile("\"browser_download_url\"\\s*:\\s*\"([^\\"]*mayuan-study\\.apk)\"")
+                Matcher download = Pattern.compile("https://[^,}]*mayuan-study\\.apk").matcher(json);
                         .matcher(json);
                 if (!tag.find() || !download.find()) return;
 
                 int latestVersion = Integer.parseInt(tag.group(1));
                 if (latestVersion <= BuildConfig.VERSION_CODE) return;
-                String downloadUrl = download.group(1).replace("\\\\/", "/");
+                String downloadUrl = download.group().replace("\\\\/", "/").replace("\"", "");
                 runOnUiThread(() -> showUpdateDialog(latestVersion, downloadUrl));
             } catch (Exception ignored) {
                 // 更新检查失败不影响刷题。
