@@ -540,8 +540,52 @@ function renderStats() {
     const done = questions.filter((question) => questionRecord(question.id).attempts).length;
     const percent = Math.round(done / questions.length * 100);
     return `<div class="stat-row"><span><strong>${escapeHtml(formatChapter(chapter))}</strong><br><small>${done} / ${questions.length} 题</small></span><span class="mini-progress"><span style="width:${percent}%"></span></span><strong>${percent}%</strong></div>`;
-  }).join("")}</div>`;
+  }).join("")}</div>
+  <div class="data-tools">
+    <div><strong>更换手机或覆盖安装前</strong><p>先复制一份备份码；安装新版本后，在这里粘贴即可恢复刷题记录、收藏和最近位置。</p></div>
+    <div class="data-tools-actions"><button class="secondary-button" data-action="backup-progress">复制备份码</button><button class="secondary-button" data-action="restore-progress">恢复备份码</button></div>
+  </div>`;
   showView("stats");
+}
+
+function progressBackupPayload() {
+  const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+  return JSON.stringify({ app: "mayuan-study", version: 1, data: saved });
+}
+
+async function backupProgress() {
+  const payload = progressBackupPayload();
+  try {
+    await navigator.clipboard.writeText(payload);
+    showToast("备份码已复制，请妥善保存");
+  } catch {
+    const textarea = document.createElement("textarea");
+    textarea.value = payload;
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    const copied = document.execCommand("copy");
+    textarea.remove();
+    showToast(copied ? "备份码已复制，请妥善保存" : "复制失败，请重试");
+  }
+}
+
+function restoreProgress() {
+  const raw = prompt("请粘贴之前复制的进度备份码：");
+  if (!raw?.trim()) return;
+  try {
+    const parsed = JSON.parse(raw.trim());
+    const saved = parsed?.app === "mayuan-study" ? parsed.data : parsed;
+    if (!saved || typeof saved !== "object" || !saved.records || typeof saved.records !== "object") throw new Error("invalid");
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+    loadLocalState();
+    updateDashboard();
+    renderStats();
+    showToast("刷题记录已恢复");
+  } catch {
+    alert("备份码无效，请确认粘贴的是本应用生成的完整内容。");
+  }
 }
 
 function toggleTheme() {
@@ -610,6 +654,10 @@ function bindEvents() {
     if (home) { updateDashboard(); return showView("home"); }
     const mockLink = event.target.closest("[data-action='show-mocks']");
     if (mockLink) return $("#mock-section").scrollIntoView({ behavior: "smooth", block: "start" });
+    const backup = event.target.closest("[data-action='backup-progress']");
+    if (backup) return backupProgress();
+    const restore = event.target.closest("[data-action='restore-progress']");
+    if (restore) return restoreProgress();
     const tab = event.target.closest("[data-tab]");
     if (tab) {
       if (tab.dataset.tab === "home") { updateDashboard(); showView("home"); }
@@ -646,7 +694,7 @@ async function init() {
   loadLocalState();
   bindEvents();
   try {
-    const response = await fetch("./data/questions.json?v=12");
+    const response = await fetch("./data/questions.json?v=13");
     if (!response.ok) throw new Error("题库载入失败");
     state.questions = await response.json();
     state.usableQuestions = state.questions.filter((question) => question.answer && !question.needsReview && Object.keys(question.options || {}).includes(question.answer[0]));
@@ -661,3 +709,4 @@ async function init() {
 }
 
 init();
+
