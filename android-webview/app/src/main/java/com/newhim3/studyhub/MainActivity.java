@@ -111,7 +111,7 @@ public class MainActivity extends Activity {
                 if (!tag.find() || !download.find()) return;
 
                 int latestVersion = Integer.parseInt(tag.group(1));
-                if (latestVersion <= BuildConfig.VERSION_CODE) return;
+                if (latestVersion <= currentVersionCode()) return;
                 String downloadUrl = download.group().replace("\\\\/", "/").replace("\"", "");
                 runOnUiThread(() -> showUpdateDialog(latestVersion, downloadUrl));
             } catch (Exception ignored) {
@@ -120,6 +120,18 @@ public class MainActivity extends Activity {
                 if (connection != null) connection.disconnect();
             }
         });
+    }
+
+    private int currentVersionCode() {
+        try {
+            android.content.pm.PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), 0);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                return (int) info.getLongVersionCode();
+            }
+            return info.versionCode;
+        } catch (Exception ignored) {
+            return 0;
+        }
     }
 
     private void showUpdateDialog(int latestVersion, String downloadUrl) {
