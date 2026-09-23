@@ -107,7 +107,6 @@ public class MainActivity extends Activity {
                 }
 
                 Matcher tag = Pattern.compile("\"tag_name\"\\s*:\\s*\"apk-build-(\\d+)\"")
-                        .matcher(json);
                 Matcher download = Pattern.compile("https://[^,}]*mayuan-study\\.apk").matcher(json);
                         .matcher(json);
                 if (!tag.find() || !download.find()) return;
