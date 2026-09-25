@@ -14,8 +14,8 @@ const state = {
   examScore: null,
   selected: new Set(),
   sessionAnswered: new Set(),
-  reviewExisting: false,
   revealed: false,
+  autoAdvanceTimer: null,
   deferredInstall: null,
   records: {},
   favorites: [],
@@ -73,6 +73,17 @@ function showView(viewName) {
 
 function questionRecord(id) {
   return state.records[id] || { attempts: 0, correctCount: 0, lastCorrect: null, lastAnswer: [], lastAt: null };
+}
+
+function hasValidQuestionData(question) {
+  const options = question?.options && typeof question.options === "object" ? question.options : {};
+  const answer = String(question?.answer || "").split("").filter(Boolean);
+  const optionLetters = new Set(Object.keys(options));
+  if (!answer.length || answer.some((letter) => !optionLetters.has(letter))) return false;
+  return Object.values(options).every((text) => {
+    const value = String(text ?? "").trim();
+    return value && !/^\d+$/.test(value);
+  });
 }
 
 function isFavorite(id) {
@@ -197,7 +208,6 @@ function startSession(mode, chapter = null, focusId = null) {
   state.examAnswers = {};
   state.examScore = null;
   state.sessionAnswered = new Set();
-  state.reviewExisting = mode === "continue";
   if (chapter) {
     questions = questions.filter((question) => question.chapter === chapter);
     label = formatChapter(chapter);
@@ -214,6 +224,9 @@ function startSession(mode, chapter = null, focusId = null) {
     questions = state.usableQuestions.filter((question) => question.machineExam);
     label = "机考重点";
   } else if (mode === "continue") {
+    // Continue must also find questions from machine/wrong/favorite practice,
+    // including valid questions that have not been assigned to a chapter yet.
+    questions = state.usableQuestions;
     label = "继续练习";
   }
 
@@ -249,7 +262,6 @@ function startMockPaper(paper) {
   state.examAnswers = {};
   state.examScore = null;
   state.sessionAnswered = new Set();
-  state.reviewExisting = false;
   renderQuestion();
   showView("practice");
 }
@@ -262,8 +274,12 @@ function renderQuestion() {
   const question = currentQuestion();
   if (!question) return;
   const record = questionRecord(question.id);
-  state.selected = new Set(state.examMode ? (state.examAnswers[question.id] || []) : (record.lastAnswer || []));
-  state.revealed = state.examMode ? state.examSubmitted : state.sessionAnswered.has(question.id) || (state.reviewExisting && record.attempts > 0);
+  // Answer selections are transient session state. They survive navigating
+  // back within this run, but a fresh app process starts each question blank.
+  state.selected = new Set(state.examMode
+    ? (state.examAnswers[question.id] || [])
+    : state.sessionAnswered.has(question.id) ? (record.lastAnswer || []) : []);
+  state.revealed = state.examMode ? state.examSubmitted : state.sessionAnswered.has(question.id);
   if (!state.examMode) {
     state.lastQuestionId = question.id;
     saveLocalState();
@@ -408,6 +424,17 @@ function submitAnswer() {
   updateHistoryStatus(state.records[question.id]);
   renderNavigator();
   updateDashboard();
+
+  // Correct answers advance automatically after a short visual confirmation.
+  // Wrong answers remain here so the explanation can be read immediately.
+  if (correct && state.sessionIndex < state.session.length - 1) {
+    const answeredIndex = state.sessionIndex;
+    clearTimeout(state.autoAdvanceTimer);
+    state.autoAdvanceTimer = setTimeout(() => {
+      state.autoAdvanceTimer = null;
+      if (state.sessionIndex === answeredIndex && state.revealed) goToQuestion(answeredIndex + 1);
+    }, 650);
+  }
 }
 
 function submitExamAnswer() {
@@ -454,6 +481,8 @@ function finishExam() {
 
 function goToQuestion(index) {
   if (index < 0 || index >= state.session.length) return;
+  clearTimeout(state.autoAdvanceTimer);
+  state.autoAdvanceTimer = null;
   state.sessionIndex = index;
   renderQuestion();
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -694,10 +723,10 @@ async function init() {
   loadLocalState();
   bindEvents();
   try {
-    const response = await fetch("./data/questions.json?v=13");
+    const response = await fetch("./data/questions.json?v=14");
     if (!response.ok) throw new Error("题库载入失败");
     state.questions = await response.json();
-    state.usableQuestions = state.questions.filter((question) => question.answer && !question.needsReview && Object.keys(question.options || {}).includes(question.answer[0]));
+    state.usableQuestions = state.questions.filter((question) => !question.needsReview && hasValidQuestionData(question));
     state.reliableQuestions = state.usableQuestions.filter((question) => question.chapter !== "未分类");
     updateDashboard();
     registerWebMcpTools();
@@ -709,4 +738,5 @@ async function init() {
 }
 
 init();
+
 
