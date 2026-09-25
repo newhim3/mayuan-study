@@ -33,7 +33,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MainActivity extends Activity {
-    private static final String APP_URL = "https://newhim3.github.io/mayuan-study/";
+    private static final String APP_URL = "file:///android_asset/web/index.html";
     private static final String RELEASES_API = "https://api.github.com/repos/newhim3/mayuan-study/releases/latest";
     private WebView webView;
     private DownloadManager downloadManager;
@@ -65,7 +65,9 @@ public class MainActivity extends Activity {
         settings.setDatabaseEnabled(true);
         settings.setCacheMode(WebSettings.LOAD_DEFAULT);
         settings.setMediaPlaybackRequiresUserGesture(true);
-        settings.setAllowFileAccess(false);
+        // The APK contains the exact gh-pages build used for this release, so
+        // the quiz remains usable without network access after installation.
+        settings.setAllowFileAccess(true);
         settings.setAllowContentAccess(false);
 
         webView.setWebChromeClient(new WebChromeClient());

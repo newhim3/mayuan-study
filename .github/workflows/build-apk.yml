@@ -19,6 +19,21 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
+      - name: Bundle web app from Pages
+        run: |
+          mkdir -p app/src/main/assets/web
+          git fetch origin gh-pages --depth=1
+          git archive FETCH_HEAD | tar -x -C app/src/main/assets/web
+      - name: Validate bundled web app
+        run: |
+          node --check app/src/main/assets/web/app.js
+          node --check app/src/main/assets/web/sw.js
+          node - <<'NODE'
+          const fs = require('fs');
+          const questions = JSON.parse(fs.readFileSync('app/src/main/assets/web/data/questions.json', 'utf8'));
+          if (!Array.isArray(questions) || questions.length === 0) throw new Error('题库为空');
+          console.log(`Validated ${questions.length} questions`);
+          NODE
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
