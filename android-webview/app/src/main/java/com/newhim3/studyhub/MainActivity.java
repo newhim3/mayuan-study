@@ -15,6 +15,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.provider.Settings;
 import android.view.View;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
@@ -39,6 +40,19 @@ public class MainActivity extends Activity {
     private DownloadManager downloadManager;
     private final Handler updateHandler = new Handler();
     private Runnable downloadWatcher;
+    /**
+     * The newest APK this app itself discovered through the GitHub releases API.
+     * Only {@link #runUpdateCheck()} writes these, so the page can never hand a
+     * download URL to {@link AppBridge#startUpdate()}.
+     */
+    private String pendingDownloadUrl;
+    private int pendingVersion;
+    /**
+     * Whether the bundled quiz page is the document on screen. Defaults to true
+     * so the ordinary startup path keeps the bridge, and turns false only once a
+     * foreign document finishes loading, which withholds {@link AppBridge}.
+     */
+    private volatile boolean bundledPageActive = true;
 
     @Override
     @SuppressLint("SetJavaScriptEnabled")
@@ -79,27 +93,40 @@ public class MainActivity extends Activity {
 
             @Override
             public void onPageFinished(WebView view, String url) {
+                bundledPageActive = url == null || url.startsWith("file:///android_asset/web/");
                 progress.setVisibility(View.GONE);
             }
         });
 
+        // The bundled quiz page asks about updates from its own button, through
+        // the "MayuanApp" bridge; nothing here runs at startup.
+        webView.addJavascriptInterface(new AppBridge(), "MayuanApp");
+
         if (savedInstanceState == null) {
             webView.loadUrl(APP_URL);
-            checkForUpdate();
         } else {
             webView.restoreState(savedInstanceState);
         }
     }
 
-    private void checkForUpdate() {
+    /**
+     * Ask GitHub for the newest signed APK and report the outcome to the page.
+     * Runs only when the page's "检查更新" button calls the bridge.
+     */
+    private void runUpdateCheck() {
+        final int current = currentVersionCode();
         Executors.newSingleThreadExecutor().execute(() -> {
             HttpURLConnection connection = null;
             try {
                 connection = (HttpURLConnection) new URL(RELEASES_API).openConnection();
                 connection.setRequestProperty("Accept", "application/vnd.github+json");
-                connection.setConnectTimeout(5000);
-                connection.setReadTimeout(5000);
-                if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) return;
+                connection.setRequestProperty("User-Agent", "mayuan-study-android");
+                connection.setConnectTimeout(8000);
+                connection.setReadTimeout(8000);
+                if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
+                    reportUpdate("error", current, 0, "更新服务暂时不可用");
+                    return;
+                }
 
                 StringBuilder json = new StringBuilder();
                 try (BufferedReader reader = new BufferedReader(
@@ -110,18 +137,58 @@ public class MainActivity extends Activity {
 
                 Matcher tag = Pattern.compile("\"tag_name\"\\s*:\\s*\"apk-build-(\\d+)\"").matcher(json);
                 Matcher download = Pattern.compile("https://[^,}]*mayuan-study\\.apk").matcher(json);
-                if (!tag.find() || !download.find()) return;
+                if (!tag.find() || !download.find()) {
+                    reportUpdate("error", current, 0, "无法解析更新信息");
+                    return;
+                }
 
-                int latestVersion = Integer.parseInt(tag.group(1));
-                if (latestVersion <= currentVersionCode()) return;
-                String downloadUrl = download.group().replace("\\\\/", "/").replace("\"", "");
-                runOnUiThread(() -> showUpdateDialog(latestVersion, downloadUrl));
+                int latest = Integer.parseInt(tag.group(1));
+                if (latest <= current) {
+                    pendingDownloadUrl = null;
+                    pendingVersion = 0;
+                    reportUpdate("latest", current, latest, null);
+                    return;
+                }
+                pendingVersion = latest;
+                pendingDownloadUrl = download.group().replace("\\\\/", "/").replace("\"", "");
+                reportUpdate("available", current, latest, null);
             } catch (Exception ignored) {
                 // 更新检查失败不影响刷题。
+                reportUpdate("error", current, 0, "网络连接失败，请稍后重试");
             } finally {
                 if (connection != null) connection.disconnect();
             }
         });
+    }
+
+    /** Hand one update-check outcome to the quiz page. */
+    private void reportUpdate(String status, int current, int latest, String message) {
+        final String payload = "{"
+                + "\"status\":\"" + jsonEscape(status) + "\""
+                + ",\"current\":" + current
+                + ",\"latest\":" + latest
+                + ",\"message\":" + (message == null ? "null" : "\"" + jsonEscape(message) + "\"")
+                + "}";
+        runOnUiThread(() -> {
+            if (webView != null) {
+                webView.evaluateJavascript(
+                        "window.__mayuanUpdate && window.__mayuanUpdate(" + payload + ")", null);
+            }
+        });
+    }
+
+    private static String jsonEscape(String value) {
+        return value.replace("\\", "\\\\").replace("\"", "\\\"")
+                .replace("\r", "").replace("\n", "\\n");
+    }
+
+    private String currentVersionName() {
+        try {
+            android.content.pm.PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), 0);
+            return info.versionName == null ? "" : info.versionName;
+        } catch (Exception ignored) {
+            return "";
+        }
     }
 
     private int currentVersionCode() {
@@ -136,15 +203,35 @@ public class MainActivity extends Activity {
         }
     }
 
-    private void showUpdateDialog(int latestVersion, String downloadUrl) {
-        if (isFinishing()) return;
-        new AlertDialog.Builder(this)
-                .setTitle("发现新版本")
-                .setMessage("检测到 APK #" + latestVersion + "，是否下载并安装？")
-                .setNegativeButton("稍后再说", null)
-                .setPositiveButton("立即更新", (dialog, which) ->
-                        downloadAndInstall(downloadUrl, latestVersion))
-                .show();
+    /** The bridge the bundled quiz page uses to ask this app about updates. */
+    private class AppBridge {
+        /** Current installed version, read synchronously while the page renders. */
+        @JavascriptInterface
+        public String getVersionInfo() {
+            if (!bundledPageActive) return "null";
+            return "{\"versionCode\":" + currentVersionCode()
+                    + ",\"versionName\":\"" + jsonEscape(currentVersionName()) + "\"}";
+        }
+
+        /** Start a manual check; the outcome arrives at window.__mayuanUpdate. */
+        @JavascriptInterface
+        public void checkForUpdate() {
+            if (!bundledPageActive) return;
+            runOnUiThread(() -> MainActivity.this.runUpdateCheck());
+        }
+
+        /** Download the APK this app most recently discovered, if any. */
+        @JavascriptInterface
+        public void startUpdate() {
+            if (!bundledPageActive) return;
+            runOnUiThread(() -> {
+                if (pendingDownloadUrl == null) {
+                    reportUpdate("error", currentVersionCode(), 0, "没有可用的更新包");
+                    return;
+                }
+                downloadAndInstall(pendingDownloadUrl, pendingVersion);
+            });
+        }
     }
 
     private void downloadAndInstall(String downloadUrl, int version) {
