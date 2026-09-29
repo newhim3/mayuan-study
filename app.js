@@ -22,6 +22,7 @@ const state = {
   lastQuestionId: null,
   lastAnsweredId: null,
   theme: "light",
+  update: { status: "idle", latest: 0, message: "" },
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -573,9 +574,87 @@ function renderStats() {
   <div class="data-tools">
     <div><strong>更换手机或覆盖安装前</strong><p>先复制一份备份码；安装新版本后，在这里粘贴即可恢复刷题记录、收藏和最近位置。</p></div>
     <div class="data-tools-actions"><button class="secondary-button" data-action="backup-progress">复制备份码</button><button class="secondary-button" data-action="restore-progress">恢复备份码</button></div>
-  </div>`;
+  </div>${updateCardHtml()}`;
   showView("stats");
 }
+
+/* ---------- 版本与更新 ---------- */
+
+/** The Android bridge, or null when the page runs in an ordinary browser. */
+function nativeAppInfo() {
+  const bridge = window.MayuanApp;
+  if (!bridge || typeof bridge.getVersionInfo !== "function") return null;
+  try {
+    const info = JSON.parse(bridge.getVersionInfo());
+    return info && typeof info.versionCode === "number" ? info : null;
+  } catch (error) {
+    return null;
+  }
+}
+
+function updateStatusText() {
+  const update = state.update || {};
+  if (update.status === "checking") return "正在检查更新…";
+  if (update.status === "downloading") return update.message || "正在下载更新包…";
+  if (update.status === "available") return `发现新版本 #${update.latest}，下载后将打开安装界面。`;
+  if (update.status === "latest") return "当前已是最新版本。";
+  if (update.status === "error") return update.message || "检查更新失败。";
+  return "";
+}
+
+function updateCardHtml() {
+  const info = nativeAppInfo();
+  const version = info ? `1.0.${info.versionCode}` : "网页版";
+  const detail = info
+    ? `内部版本 ${info.versionCode} · Android 安装版`
+    : "浏览器打开，刷新页面即可获取最新内容";
+  const status = updateStatusText();
+  const actionable = state.update?.status === "available";
+  return `<div class="data-tools">
+    <div><strong>当前版本 ${escapeHtml(version)}</strong><p>${escapeHtml(detail)}</p>${status ? `<p role="status">${escapeHtml(status)}</p>` : ""}</div>
+    <div class="data-tools-actions">
+      <button class="secondary-button" id="check-update-button"${state.update?.status === "checking" ? " disabled" : ""}>检查更新</button>
+      ${actionable ? `<button class="primary-button" id="apply-update-button">立即更新到 #${state.update.latest}</button>` : ""}
+    </div>
+  </div>`;
+}
+
+/** Re-render the update card only while the stats view is on screen. */
+function refreshUpdateCard() {
+  if ($("#stats-view")?.classList.contains("active")) renderStats();
+}
+
+function checkAppUpdate() {
+  const bridge = window.MayuanApp;
+  if (!bridge || typeof bridge.checkForUpdate !== "function") {
+    showToast("网页版无需检查更新，刷新页面即可");
+    return;
+  }
+  state.update = { status: "checking", latest: 0, message: "" };
+  refreshUpdateCard();
+  bridge.checkForUpdate();
+}
+
+function applyAppUpdate() {
+  const bridge = window.MayuanApp;
+  if (!bridge || typeof bridge.startUpdate !== "function") return;
+  state.update = { status: "downloading", latest: state.update?.latest || 0, message: "正在下载更新包…" };
+  refreshUpdateCard();
+  bridge.startUpdate();
+}
+
+/** Result callback the Android bridge calls through evaluateJavascript. */
+window.__mayuanUpdate = (result) => {
+  if (!result || typeof result !== "object") return;
+  state.update = {
+    status: typeof result.status === "string" ? result.status : "error",
+    latest: Number(result.latest) || 0,
+    message: typeof result.message === "string" ? result.message : "",
+  };
+  refreshUpdateCard();
+  if (state.update.status === "latest") showToast("已是最新版本");
+  else if (state.update.status === "error") showToast(state.update.message || "检查更新失败");
+};
 
 function progressBackupPayload() {
   const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
@@ -687,6 +766,10 @@ function bindEvents() {
     if (backup) return backupProgress();
     const restore = event.target.closest("[data-action='restore-progress']");
     if (restore) return restoreProgress();
+    const checkUpdate = event.target.closest("#check-update-button");
+    if (checkUpdate) return checkAppUpdate();
+    const applyUpdate = event.target.closest("#apply-update-button");
+    if (applyUpdate) return applyAppUpdate();
     const tab = event.target.closest("[data-tab]");
     if (tab) {
       if (tab.dataset.tab === "home") { updateDashboard(); showView("home"); }
@@ -723,7 +806,7 @@ async function init() {
   loadLocalState();
   bindEvents();
   try {
-    const response = await fetch("./data/questions.json?v=14");
+    const response = await fetch("./data/questions.json?v=15");
     if (!response.ok) throw new Error("题库载入失败");
     state.questions = await response.json();
     state.usableQuestions = state.questions.filter((question) => !question.needsReview && hasValidQuestionData(question));
