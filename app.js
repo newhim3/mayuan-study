@@ -806,7 +806,7 @@ async function init() {
   loadLocalState();
   bindEvents();
   try {
-    const response = await fetch("./data/questions.json?v=15");
+    const response = await fetch("./data/questions.json?v=16");
     if (!response.ok) throw new Error("题库载入失败");
     state.questions = await response.json();
     state.usableQuestions = state.questions.filter((question) => !question.needsReview && hasValidQuestionData(question));
@@ -817,7 +817,10 @@ async function init() {
   } catch (error) {
     $("#loading").innerHTML = `<p>${escapeHtml(error.message)}，请刷新后重试。</p>`;
   }
-  if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("./sw.js").catch(() => {});
+  // The installed APK already ships the assets it serves, so a service worker
+  // there would only risk handing back a stale bundle after an update. Keep it
+  // for browsers, where it is what makes the site work offline.
+  if ("serviceWorker" in navigator && location.protocol.startsWith("http") && !window.MayuanApp) navigator.serviceWorker.register("./sw.js").catch(() => {});
 }
 
 init();
