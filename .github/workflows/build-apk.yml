@@ -21,9 +21,19 @@ jobs:
           ref: main
       - name: Bundle web app from Pages
         run: |
-          mkdir -p app/src/main/assets/web
-          git fetch origin gh-pages --depth=1
-          git archive FETCH_HEAD | tar -x -C app/src/main/assets/web
+          set -euo pipefail
+          # The checkout is shallow, and `git archive` (and read-tree) yield an
+          # empty tree there, which silently produced an APK with no quiz in it.
+          # A dedicated shallow clone of the Pages branch is unambiguous, and
+          # the guards below refuse to build a package with an empty bundle.
+          rm -rf app/src/main/assets/web
+          git clone --depth=1 --branch gh-pages \
+            "https://github.com/${{ github.repository }}.git" \
+            app/src/main/assets/web
+          rm -rf app/src/main/assets/web/.git
+          test -f app/src/main/assets/web/app.js
+          test -f app/src/main/assets/web/sw.js
+          test -f app/src/main/assets/web/data/questions.json
       - name: Validate bundled web app
         run: |
           node --check app/src/main/assets/web/app.js
