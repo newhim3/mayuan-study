@@ -1,0 +1,21 @@
+# Keep one line-ending convention in the repository.
+#
+# Before this file existed the tracked blobs were mixed: app.js alone carried
+# 691 CRLF lines next to 51 LF ones, so any edit to a neighbouring line showed
+# up as a whole-file diff. Normalize to LF in the repository and in the working
+# tree; browsers, Node and the Android asset packer all read LF equally well.
+* text=auto eol=lf
+
+# Never let a text filter touch binary payloads.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.pdf binary
+*.zip binary
+*.jar binary
+*.jks binary
+*.apk binary
+*.keystore binary
