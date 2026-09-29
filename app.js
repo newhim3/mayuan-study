@@ -181,6 +181,19 @@ function escapeHtml(value) {
   return String(value).replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[character]);
 }
 
+/**
+ * Lay out one question's explanation. The bank stores every option's reasoning
+ * as one unbroken run inside 【选项分析】, which is hard to read, so give each
+ * 【…】 section and each option its own line. The panel already renders newlines
+ * via `white-space: pre-line`.
+ */
+function formatExplanation(text) {
+  return escapeHtml(text || "")
+    .replace(/【([^】]+)】/g, '<span class="explanation-label">【$1】</span>')
+    .replace(/([；;])\s*(?=[A-Ea-e]项)/g, "$1\n")
+    .replace(/。\s*(?=[A-Ea-e]项)/g, "。\n");
+}
+
 function shuffled(items) {
   const copy = [...items];
   for (let index = copy.length - 1; index > 0; index -= 1) {
@@ -336,7 +349,7 @@ function renderQuestion() {
     const selected = [...state.selected].sort().join("");
     const correct = selected === question.answer;
     panel.className = `result-panel${correct ? "" : " wrong"}`;
-    panel.innerHTML = `<strong>${correct ? "回答正确" : `${selected ? `你的答案 ${selected}` : "未作答"} · 正确答案 ${question.answer}`}</strong><p>${escapeHtml(question.explanation)}</p>`;
+    panel.innerHTML = `<strong>${correct ? "回答正确" : `${selected ? `你的答案 ${selected}` : "未作答"} · 正确答案 ${question.answer}`}</strong><p>${formatExplanation(question.explanation)}</p>`;
   } else {
     panel.className = "result-panel hidden";
     panel.innerHTML = "";
@@ -419,7 +432,7 @@ function submitAnswer() {
   });
   const panel = $("#result-panel");
   panel.className = `result-panel${correct ? "" : " wrong"}`;
-  panel.innerHTML = `<strong>${correct ? "回答正确" : `回答错误 · 正确答案 ${question.answer}`}</strong><p>${escapeHtml(question.explanation)}</p>`;
+  panel.innerHTML = `<strong>${correct ? "回答正确" : `回答错误 · 正确答案 ${question.answer}`}</strong><p>${formatExplanation(question.explanation)}</p>`;
   $("#submit-button").textContent = state.sessionIndex < state.session.length - 1 ? "已提交" : "已完成";
   $("#submit-button").disabled = true;
   updateHistoryStatus(state.records[question.id]);
@@ -806,7 +819,7 @@ async function init() {
   loadLocalState();
   bindEvents();
   try {
-    const response = await fetch("./data/questions.json?v=16");
+    const response = await fetch("./data/questions.json?v=17");
     if (!response.ok) throw new Error("题库载入失败");
     state.questions = await response.json();
     state.usableQuestions = state.questions.filter((question) => !question.needsReview && hasValidQuestionData(question));

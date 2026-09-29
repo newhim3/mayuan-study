@@ -162,6 +162,7 @@ main { width: min(1180px, calc(100% - 40px)); margin: 28px auto 60px; }
 .result-panel.wrong { border-left-color: var(--wrong); background: var(--wrong-soft); }
 .result-panel strong { display: block; margin-bottom: 6px; }
 .result-panel p { margin: 0; white-space: pre-line; }
+.explanation-label { display: block; margin-top: 10px; font-weight: 700; color: var(--navy); }
 .question-actions { display: flex; gap: 12px; margin-top: 28px; }
 .desktop-navigator { position: sticky; top: 170px; padding: 20px; }
 .navigator-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
