@@ -18,12 +18,15 @@ import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.webkit.WebViewAssetLoader;
+import androidx.webkit.WebViewClientCompat;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -34,7 +37,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MainActivity extends Activity {
-    private static final String APP_URL = "file:///android_asset/web/index.html";
+    /** Where WebViewAssetLoader publishes the packaged web build. */
+    private static final String ASSET_HOST = "https://appassets.androidplatform.net";
+    private static final String APP_URL = ASSET_HOST + "/assets/web/index.html";
+    /** Prefix the bundled page keeps while it is the document on screen. */
+    private static final String APP_URL_PREFIX = ASSET_HOST + "/assets/web/";
     private static final String RELEASES_API = "https://api.github.com/repos/newhim3/mayuan-study/releases/latest";
     private WebView webView;
     private DownloadManager downloadManager;
@@ -79,21 +86,33 @@ public class MainActivity extends Activity {
         settings.setDatabaseEnabled(true);
         settings.setCacheMode(WebSettings.LOAD_DEFAULT);
         settings.setMediaPlaybackRequiresUserGesture(true);
-        // The APK contains the exact gh-pages build used for this release, so
-        // the quiz remains usable without network access after installation.
-        settings.setAllowFileAccess(true);
+        // The APK carries the exact gh-pages build used for this release and
+        // serves it from the asset loader's https origin, so the page can read
+        // its own questions.json and still works with no network at all. A
+        // file:// page cannot read its own local JSON, which is what left the
+        // app stuck on "Failed to fetch"; file access therefore stays off.
+        settings.setAllowFileAccess(false);
         settings.setAllowContentAccess(false);
 
+        final WebViewAssetLoader assetLoader = new WebViewAssetLoader.Builder()
+                .addPathHandler("/assets/", new WebViewAssetLoader.AssetsPathHandler(this))
+                .build();
+
         webView.setWebChromeClient(new WebChromeClient());
-        webView.setWebViewClient(new WebViewClient() {
+        webView.setWebViewClient(new WebViewClientCompat() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 return false;
             }
 
             @Override
+            public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+                return assetLoader.shouldInterceptRequest(request.getUrl());
+            }
+
+            @Override
             public void onPageFinished(WebView view, String url) {
-                bundledPageActive = url == null || url.startsWith("file:///android_asset/web/");
+                bundledPageActive = url == null || url.startsWith(APP_URL_PREFIX);
                 progress.setVisibility(View.GONE);
             }
         });

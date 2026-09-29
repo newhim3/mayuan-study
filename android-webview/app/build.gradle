@@ -32,3 +32,11 @@ android {
         }
     }
 }
+
+dependencies {
+    // Serves the packaged web app from https://appassets.androidplatform.net, a
+    // real secure origin, so the page's fetch() of its own question bank is an
+    // ordinary same-origin request. On a file:// page that request is refused,
+    // which left the app stuck on "Failed to fetch".
+    implementation "androidx.webkit:webkit:1.13.0"
+}

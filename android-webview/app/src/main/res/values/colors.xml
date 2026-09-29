@@ -1,0 +1,4 @@
+<resources>
+    <!-- The medallion sits on the app's brand red inside the adaptive icon. -->
+    <color name="ic_launcher_background">#a61b29</color>
+</resources>
