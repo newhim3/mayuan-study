@@ -7,7 +7,7 @@
     <meta name="description" content="马克思主义基本原理本地刷题工具，支持错题、收藏、进度与离线使用。" />
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="icon" type="image/png" sizes="64x64" href="./favicon.png" />
-    <link rel="stylesheet" href="./styles.css?v=17" />
+    <link rel="stylesheet" href="./styles.css?v=18" />
     <title>马原刷题</title>
   </head>
   <body>
@@ -50,38 +50,31 @@
             </article>
           </div>
 
-          <section class="section-block" aria-labelledby="modes-title">
-            <div class="section-heading"><div><p class="eyebrow">开始练习</p><h2 id="modes-title">选择刷题方式</h2></div></div>
-            <div class="mode-grid">
-              <button class="mode-card accent" data-mode="sequential">
-                <span class="mode-icon">序</span><span><strong>顺序练习</strong><small>按题库顺序稳步完成</small></span><span class="arrow">→</span>
-              </button>
-              <button class="mode-card" data-mode="random">
-                <span class="mode-icon">随</span><span><strong>随机练习</strong><small>打乱题目检验掌握情况</small></span><span class="arrow">→</span>
-              </button>
-              <button class="mode-card" data-mode="wrong">
-                <span class="mode-icon">错</span><span><strong>错题重练</strong><small id="wrong-mode-count">暂无错题</small></span><span class="arrow">→</span>
-              </button>
-              <button class="mode-card" data-mode="favorites">
-                <span class="mode-icon">藏</span><span><strong>收藏题目</strong><small id="favorite-mode-count">尚未收藏</small></span><span class="arrow">→</span>
-              </button>
-              <button class="mode-card" data-mode="machine">
-                <span class="mode-icon">机</span><span><strong>机考重点</strong><small id="machine-mode-count">正在整理</small></span><span class="arrow">→</span>
-              </button>
-              <button class="mode-card" data-action="show-mocks">
-                <span class="mode-icon">考</span><span><strong>模拟测试</strong><small>分卷测试，交卷后统一判分</small></span><span class="arrow">↓</span>
-              </button>
-            </div>
+          <section class="section-block" aria-labelledby="resume-title">
+            <div class="section-heading"><div><p class="eyebrow">快速跳转</p><h2 id="resume-title">上次刷到哪里</h2></div></div>
+            <div id="resume-card" class="resume-card" aria-live="polite"></div>
+          </section>
+        </section>
+
+        <section id="bank-view" class="view" aria-labelledby="bank-title">
+          <div class="list-header"><div><p class="eyebrow">开始练习</p><h1 id="bank-title">刷题</h1></div><button class="text-button" id="reset-progress">重置记录</button></div>
+
+          <div class="quick-row">
+            <button class="quick-chip accent" data-mode="sequential">顺序练习</button>
+            <button class="quick-chip" data-mode="random">随机练习</button>
+            <button class="quick-chip" data-mode="machine">机考重点<small id="machine-mode-count">正在整理</small></button>
+            <button class="quick-chip" data-mode="wrong">错题重练<small id="wrong-mode-count">暂无错题</small></button>
+            <button class="quick-chip" data-mode="favorites">收藏题目<small id="favorite-mode-count">尚未收藏</small></button>
+          </div>
+
+          <section class="section-block" aria-labelledby="chapters-title">
+            <div class="section-heading"><div><p class="eyebrow">专项巩固</p><h2 id="chapters-title">章节练习</h2></div></div>
+            <div id="chapter-list" class="chapter-list" aria-live="polite"></div>
           </section>
 
           <section id="mock-section" class="section-block" aria-labelledby="mock-title">
-            <div class="section-heading"><div><p class="eyebrow">导论至第七章全覆盖</p><h2 id="mock-title">模拟测试</h2></div><span class="section-note">每套 60 题 · 作答时隐藏答案</span></div>
+            <div class="section-heading"><div><p class="eyebrow">导论至第七章全覆盖</p><h2 id="mock-title">模拟练习</h2></div><span class="section-note">每套 60 题 · 交卷后统一判分</span></div>
             <div id="mock-list" class="mock-grid" aria-live="polite"></div>
-          </section>
-
-          <section class="section-block" aria-labelledby="chapters-title">
-            <div class="section-heading"><div><p class="eyebrow">专项巩固</p><h2 id="chapters-title">章节练习</h2></div><button class="text-button" id="reset-progress">重置记录</button></div>
-            <div id="chapter-list" class="chapter-list" aria-live="polite"></div>
           </section>
         </section>
 
@@ -156,7 +149,7 @@
       <div id="toast" class="toast hidden" role="status"></div>
       <div id="loading" class="loading"><span></span><p>正在整理题库…</p></div>
     </div>
-    <script src="./app.js?v=17" defer></script>
+    <script src="./app.js?v=18" defer></script>
   </body>
 </html>
 

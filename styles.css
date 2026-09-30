@@ -130,7 +130,7 @@ main { width: min(1180px, calc(100% - 40px)); margin: 28px auto 60px; }
 .progress-track span { display: block; width: 0; height: 100%; border-radius: inherit; background: var(--brand); transition: width .25s ease; }
 .practice-layout { display: grid; grid-template-columns: minmax(0, 1fr) 280px; align-items: start; gap: 20px; }
 .question-card, .desktop-navigator { border-radius: 24px; }
-.question-card { min-height: 570px; padding: clamp(24px, 3.5vw, 38px); }
+.question-card { min-height: 0; padding: clamp(18px, 2vw, 26px); }
 .question-meta { display: flex; align-items: center; gap: 8px; }
 .type-chip, .chapter-chip, .count-pill { padding: 7px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; }
 .type-chip { display: inline-flex; min-height: 30px; align-items: center; gap: 7px; border: 1px solid transparent; font-size: 13px; font-weight: 800; letter-spacing: .02em; white-space: nowrap; }
@@ -237,7 +237,7 @@ main { width: min(1180px, calc(100% - 40px)); margin: 28px auto 60px; }
   .mock-grid { grid-template-columns: 1fr 1fr; gap: 10px; }.mock-card { min-height: 108px; padding: 16px; }
   .chapter-row { grid-template-columns: 1fr auto; gap: 12px; }.chapter-row .mini-progress { grid-column: 1 / -1; grid-row: 2; }
   .practice-header { top: 70px; margin-inline: -2px; }
-  .question-card { min-height: calc(100vh - 180px); padding: 20px 17px 100px; border-radius: 20px; box-shadow: 0 10px 30px rgba(18, 28, 40, .055); }
+  .question-card { min-height: 0; padding: 14px 14px 150px; border-radius: 20px; box-shadow: 0 10px 30px rgba(18, 28, 40, .055); }
   .question-meta { flex-wrap: wrap; }.chapter-chip { max-width: 68%; }.favorite-button { margin-left: 0; }
   .question-title { margin-top: 10px; font-size: 17px; font-weight: 600; line-height: 1.82; }
   .option-button { min-height: 54px; padding: 9px 12px; font-size: 14px; line-height: 1.68; }
@@ -248,4 +248,50 @@ main { width: min(1180px, calc(100% - 40px)); margin: 28px auto 60px; }
 }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+/* ---------- 紧凑排版 ----------
+   The question card used to reserve a full viewport of height
+   (`min-height: calc(100vh - 180px)`) and pad itself like a landing page, so the
+   first screen held the stem and nothing else. Drop the reserved height and
+   tighten the rhythm until a stem plus four options share one screen. */
+.question-card { min-height: 0; padding: 18px 18px 16px; }
+.history-status { margin-top: 10px; font-size: 12px; }
+.question-title { max-width: none; margin: 8px 0 12px; font-size: 17px; line-height: 1.62; }
+.multiple-hint { margin: -4px 0 10px; font-size: 13px; }
+.options { gap: 7px; }
+.option-button { min-height: 46px; padding: 8px 12px; gap: 10px; border-radius: 12px; font-size: 14px; line-height: 1.55; }
+.option-letter { width: 26px; height: 26px; border-radius: 8px; font-size: 13px; }
+.result-panel { margin-top: 12px; padding: 12px 14px; font-size: 13px; line-height: 1.72; }
+.explanation-label { margin-top: 9px; }
+.question-actions { gap: 8px; margin-top: 14px; }
+.practice-header { margin-bottom: 10px; padding: 9px 11px; border-radius: 15px; }
+.back-button { width: 36px; height: 36px; font-size: 19px; }
+.favorite-button, .type-chip, .chapter-chip { padding: 5px 9px; font-size: 12px; }
+
+/* ---------- 刷题 tab ---------- */
+.quick-row { display: flex; gap: 8px; margin: 2px 0 6px; padding-bottom: 6px; overflow-x: auto; scrollbar-width: none; }
+.quick-row::-webkit-scrollbar { display: none; }
+.quick-chip { display: inline-flex; flex: 0 0 auto; align-items: baseline; gap: 6px; padding: 9px 15px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
+.quick-chip.accent { border-color: var(--brand); background: var(--brand); color: #fff; }
+.quick-chip small { color: var(--muted); font-size: 11px; font-weight: 500; }
+.quick-chip.accent small { color: #ffd9dd; }
+
+/* ---------- 首页「上次刷到哪里」 ---------- */
+.resume-card { margin-top: 2px; }
+.resume-empty { margin: 0; padding: 18px; border: 1px dashed var(--line); border-radius: 16px; color: var(--muted); font-size: 14px; }
+.resume-card-button { display: block; width: 100%; padding: 15px 17px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); box-shadow: var(--shadow); text-align: left; cursor: pointer; }
+.resume-meta { display: block; color: var(--muted); font-size: 12px; }
+.resume-card-button strong { display: -webkit-box; margin: 7px 0 9px; overflow: hidden; font-size: 15px; font-weight: 620; line-height: 1.6; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.resume-go { color: var(--brand); font-size: 13px; font-weight: 700; }
+
+@media (max-width: 900px) {
+  .question-card { min-height: 0; padding: 14px 14px 150px; }
+  .question-title { font-size: 16.5px; line-height: 1.58; }
+  .option-button { min-height: 44px; padding: 8px 11px; line-height: 1.5; }
+  .options { gap: 6px; }
+  .history-status { margin-top: 8px; }
+  .practice-header { top: 66px; margin-bottom: 8px; padding: 8px 10px; }
+  .question-actions button { min-height: 44px; }
+  .quick-chip { padding: 8px 13px; font-size: 13px; }
+}
 

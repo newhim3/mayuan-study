@@ -139,6 +139,25 @@ function updateDashboard() {
   $("#machine-mode-count").textContent = `${machineCount} 道机考来源题`;
   renderMockPapers();
   renderChapters();
+  renderResumeCard();
+}
+
+/** The home page's only job beyond progress: jump straight back to the last question. */
+function renderResumeCard() {
+  const host = $("#resume-card");
+  if (!host) return;
+  const last = state.reliableQuestions.find((question) => question.id === (state.lastAnsweredId || state.lastQuestionId));
+  if (!last) {
+    host.innerHTML = `<p class="resume-empty">还没有答题记录，去「刷题」开始第一题。</p>`;
+    return;
+  }
+  const index = state.usableQuestions.indexOf(last) + 1;
+  const record = questionRecord(last.id);
+  host.innerHTML = `<button class="resume-card-button" data-mode="continue">
+    <span class="resume-meta">${escapeHtml(formatChapter(last.chapter))} · 第 ${index} 题${record.attempts ? ` · 已答 ${record.attempts} 次` : ""}</span>
+    <strong>${escapeHtml(last.stem)}</strong>
+    <span class="resume-go">继续这一题 →</span>
+  </button>`;
 }
 
 function renderMockPapers() {
@@ -786,7 +805,7 @@ function bindEvents() {
     const tab = event.target.closest("[data-tab]");
     if (tab) {
       if (tab.dataset.tab === "home") { updateDashboard(); showView("home"); }
-      else if (tab.dataset.tab === "practice") startSession("continue");
+      else if (tab.dataset.tab === "practice") { renderChapters(); renderMockPapers(); showView("bank"); }
       else if (tab.dataset.tab === "wrong") renderList("wrong");
       else if (tab.dataset.tab === "favorites") renderList("favorites");
       else if (tab.dataset.tab === "stats") renderStats();
@@ -819,7 +838,7 @@ async function init() {
   loadLocalState();
   bindEvents();
   try {
-    const response = await fetch("./data/questions.json?v=17");
+    const response = await fetch("./data/questions.json?v=18");
     if (!response.ok) throw new Error("题库载入失败");
     state.questions = await response.json();
     state.usableQuestions = state.questions.filter((question) => !question.needsReview && hasValidQuestionData(question));
