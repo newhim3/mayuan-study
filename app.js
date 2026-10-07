@@ -209,8 +209,10 @@ function escapeHtml(value) {
 function formatExplanation(text) {
   return escapeHtml(text || "")
     .replace(/【([^】]+)】/g, '<span class="explanation-label">【$1】</span>')
-    .replace(/([；;])\s*(?=[A-Ea-e]项)/g, "$1\n")
-    .replace(/。\s*(?=[A-Ea-e]项)/g, "。\n");
+    // `[ \t]*` and not `\s*`: text that already puts each option on its own line
+    // must not gain a second break.
+    .replace(/([；;])[ \t]*(?=[A-Ea-e]项)/g, "$1\n")
+    .replace(/。[ \t]*(?=[A-Ea-e]项)/g, "。\n");
 }
 
 function shuffled(items) {
@@ -838,7 +840,7 @@ async function init() {
   loadLocalState();
   bindEvents();
   try {
-    const response = await fetch("./data/questions.json?v=18");
+    const response = await fetch("./data/questions.json?v=19");
     if (!response.ok) throw new Error("题库载入失败");
     state.questions = await response.json();
     state.usableQuestions = state.questions.filter((question) => !question.needsReview && hasValidQuestionData(question));

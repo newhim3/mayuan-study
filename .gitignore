@@ -1,0 +1,4 @@
+# Rewrite working files — inputs and per-chunk outputs. The finished text lives
+# in data/questions.json, so these must not be published to Pages.
+data/rewrite/
+data/rewrite2/
